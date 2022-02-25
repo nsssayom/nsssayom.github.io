@@ -1,107 +1,107 @@
-(function($) {
-  "use strict";
-  
-    $.fn.andSelf = function() {
-      return this.addBack.apply(this, arguments);
+(function ($) {
+    "use strict";
+
+    $.fn.andSelf = function () {
+        return this.addBack.apply(this, arguments);
     }
-  
-      /* Loader Code Start */
-      $(window).on("load", function() { 
-          $(".section-loader").fadeOut("slow");
-          
-          var $container = $('.portfolioContainer');
-          $container.isotope({
-              filter: '*',
-              animationOptions: {
-                  queue: true
-              }
-          });
-       
-          $('.portfolio-nav li').click(function(){
-              $('.portfolio-nav .current').removeClass('current');
-              $(this).addClass('current');
-       
-              var selector = $(this).attr('data-filter');
-              $container.isotope({
-                  filter: selector,
-                  animationOptions: {
-                      queue: true
-                  }
-               });
-               return false;
-          });
+
+    /* Loader Code Start */
+    $(window).on("load", function () {
+        $(".section-loader").fadeOut("slow");
+
+        var $container = $('.portfolioContainer');
+        $container.isotope({
+            filter: '*',
+            animationOptions: {
+                queue: true
+            }
         });
-      /* Loader Code End */
-  
-   
+
+        $('.portfolio-nav li').click(function () {
+            $('.portfolio-nav .current').removeClass('current');
+            $(this).addClass('current');
+
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    queue: true
+                }
+            });
+            return false;
+        });
+    });
+    /* Loader Code End */
+
+
     /*
     |====================
     | Mobile NAv trigger
     |=====================
     */
-    
-    var trigger = $('.navbar-toggler'),
-      overlay     = $('.overlay'),
-      navc     = $('.navbar-collapse'),
-      active      = false;
-  
 
-      $('.navbar-toggler, .navbar-nav li a, .overlay').on('click', function () {
-          $('.navbar-toggler').toggleClass('active')
+    var trigger = $('.navbar-toggler'),
+        overlay = $('.overlay'),
+        navc = $('.navbar-collapse'),
+        active = false;
+
+
+    $('.navbar-toggler, .navbar-nav li a, .overlay').on('click', function () {
+        $('.navbar-toggler').toggleClass('active')
         //   $('#js-navbar-menu').toggleClass('active');
         //   $('.navbar-collapse').toggleClass('show');
-          overlay.toggleClass('active');
-          navc.toggleClass('active');
-      });  
-      
-        
+        overlay.toggleClass('active');
+        navc.toggleClass('active');
+    });
+
+
     /*
     |=================
     | Onepage Nav
     |================
     */
-        
-      $('#mh-header').onePageNav({
-          currentClass: 'active', 
-          changeHash: false,
-          scrollSpeed: 750,
-          scrollThreshold: 0.5,
-      });
-    
+
+    $('#mh-header').onePageNav({
+        currentClass: 'active',
+        changeHash: false,
+        scrollSpeed: 750,
+        scrollThreshold: 0.5,
+    });
+
     /*
     |=================
     | fancybox
     |================
     */
- 
-      $("[data-fancybox]").fancybox({});
-      
-      
+
+    $("[data-fancybox]").fancybox({});
+
+
     /*
     |===============
     | WOW ANIMATION
     |==================
     */
-    	var wow = new WOW({
-          mobile: false  // trigger animations on mobile devices (default is true)
-      });
-      wow.init();
-      
-      
+    var wow = new WOW({
+        mobile: false  // trigger animations on mobile devices (default is true)
+    });
+    wow.init();
+
+
     /*
     |=================
     | AOS
     |================
-    */      
-      
-      //AOS.init();
-  
+    */
+
+    //AOS.init();
+
     /*
     | ==========================
     | NAV FIXED ON SCROLL
     | ==========================
     */
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
         var scroll = $(window).scrollTop();
         if (scroll >= 50) {
             $(".nav-scroll").addClass("nav-strict");
@@ -109,60 +109,60 @@
             $(".nav-scroll").removeClass("nav-strict");
         }
     });
-    
+
 
     /*
     |=================
     | Progress bar
     |================
-    */   
-    $(".determinate").each(function(){
-      var width = $(this).text();
-      $(this).css("width", width)
-        .empty()
-        .append('<i class="fa fa-circle"></i>');                
+    */
+    $(".determinate").each(function () {
+        var width = $(this).text();
+        $(this).css("width", width)
+            .empty()
+            .append('<i class="fa fa-circle"></i>');
     });
-    
+
     /*
     |=================
     | Portfolio mixin
     |================
-    */   
+    */
     $('#portfolio-item').mixItUp();
-    
+
     /*
     |=================
     | Client review
     |================
-    */   
-     $('#mh-client-review').owlCarousel({
+    */
+    $('#mh-client-review').owlCarousel({
         loop: false,
         responsiveClass: true,
         nav: true,
         autoplay: false,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 2,
-          },
-          1170: {
-            items: 3,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            1170: {
+                items: 3,
+            }
         }
-    });  
-    
+    });
+
     /*
     |=================
     | Project review slide
     |================
-    */   
+    */
     $('.mh-project-testimonial').owlCarousel({
         loop: true,
         responsiveClass: true,
@@ -170,29 +170,29 @@
         dots: false,
         autoplay: true,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         pagination: false,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 1,
-          },
-          1170: {
-            items: 1,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 1,
+            },
+            1170: {
+                items: 1,
+            }
         }
-    });     
-    
+    });
+
     /*
     |=================
     | Single Project review
     |================
-    */   
+    */
     $('#single-project').owlCarousel({
         loop: false,
         responsiveClass: true,
@@ -200,29 +200,29 @@
         dots: true,
         autoplay: false,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         pagination: false,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 1,
-          },
-          1170: {
-            items: 1,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 1,
+            },
+            1170: {
+                items: 1,
+            }
         }
-    });    
-    
+    });
+
     /*
     |=================
     | Project review slide
     |================
-    */   
+    */
     $('.mh-single-project-slide-by-side').owlCarousel({
         loop: false,
         responsiveClass: true,
@@ -231,153 +231,212 @@
         dots: false,
         autoplay: false,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         pagination: false,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 1,
-          },
-          1170: {
-            items: 1,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 1,
+            },
+            1170: {
+                items: 1,
+            }
         }
-    });     
-    
+    });
+
     /*
     |=================
     | Single client review
     |================
-    */   
+    */
     $('#mh-single-client-review').owlCarousel({
         loop: false,
         responsiveClass: true,
         nav: true,
         autoplay: false,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 1,
-          },
-          1170: {
-            items: 1,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 1,
+            },
+            1170: {
+                items: 1,
+            }
         }
-    });   
-    
+    });
+
     /*
     |=================
     | Clint review slide
     |================
-    */   
+    */
     $('#mh-2-client-review').owlCarousel({
         loop: false,
         responsiveClass: true,
         nav: true,
         autoplay: false,
         smartSpeed: 450,
-        stopOnHover : true,
+        stopOnHover: true,
         animateIn: 'slideInRight',
         animateOut: 'slideOutLeft',
         autoplayHoverPause: true,
         responsive: {
-          0: {
-            items: 1,
-          },
-          768: {
-            items: 2,
-          },
-          1170: {
-            items: 2,
-          }
+            0: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            1170: {
+                items: 2,
+            }
         }
     });
-    
-    
+
+
     // Smooth Scroll
-        // $(function() {
-        //   $('a[href*=#]:not([href=#])').click(function() {
-        //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        //       var target = $(this.hash);
-        //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        //       if (target.length) {
-        //         $('html,body').animate({
-        //           scrollTop: target.offset().top
-        //         }, 600);
-        //         return false;
-        //       }
-        //     }
-        //   });
-        // });
-        
-        
-        
+    // $(function() {
+    //   $('a[href*=#]:not([href=#])').click(function() {
+    //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    //       var target = $(this.hash);
+    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //       if (target.length) {
+    //         $('html,body').animate({
+    //           scrollTop: target.offset().top
+    //         }, 600);
+    //         return false;
+    //       }
+    //     }
+    //   });
+    // });
+
+
+
     /*
     |=================
     | CONTACT FORM
     |=================
     */
-        
-      $("#contactForm").validator().on("submit", function (event) {
-          if (event.isDefaultPrevented()) {
+
+    $("#contactForm").validator().on("submit", function (event) {
+        if (event.isDefaultPrevented()) {
             // handle the invalid form...
             formError();
             submitMSG(false, "Did you fill in the form properly?");
-          } else {
+        } else {
             // everything looks good!
             event.preventDefault();
             submitForm();
-          }
-       });
-    
-        function submitForm(){
-          var name = $("#name").val();
-          var email = $("#email").val();
-          var message = $("#message").val();
-          $.ajax({
-              type: "POST",
-              url: "process.php",
-              data: "name=" + name + "&email=" + email + "&message=" + message,
-              success : function(text){
-                  if (text == "success"){
-                      formSuccess();
-                    } else {
-                      formError();
-                      submitMSG(false,text);
-                    }
+        }
+    });
+
+    function submitForm () {
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var message = $("#message").val();
+        $.ajax({
+            type: "POST",
+            url: "process.php",
+            data: "name=" + name + "&email=" + email + "&message=" + message,
+            success: function (text) {
+                if (text == "success") {
+                    formSuccess();
+                } else {
+                    formError();
+                    submitMSG(false, text);
                 }
-            });
-        }
-        function formSuccess(){
-            $("#contactForm")[0].reset();
-            submitMSG(true, "Message Sent!")
-        }
-    	  function formError(){   
-    	    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-    	        $(this).removeClass();
-    	    });
-    	  }
-        function submitMSG(valid, msg){
-          if(valid){
+            }
+        });
+    }
+    function formSuccess () {
+        $("#contactForm")[0].reset();
+        submitMSG(true, "Message Sent!")
+    }
+    function formError () {
+        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            $(this).removeClass();
+        });
+    }
+    function submitMSG (valid, msg) {
+        if (valid) {
             var msgClasses = "h3 text-center fadeInUp animated text-success";
-          } else {
+        } else {
             var msgClasses = "h3 text-center shake animated text-danger";
-          }
-          $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
         }
+        $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+    }
+
+
+
+}(jQuery));
+
+
+function setCookie (cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function readCookie (cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
     
 
-    
-}(jQuery));
+// in document load read cookie for dark mode in vanilla js
+document.addEventListener('DOMContentLoaded', function () {
+    if (readCookie('dark-mode') == 'true') {
+        document.body.classList.add('dark-version');
+    }
+    else {
+        document.body.classList.add('white-version');
+    }
+});
+
+
+// if dark-mode-btn is clicked in vanilla js
+document.querySelector('#dark-mode-btn').addEventListener('click', function () {
+    // get body classname
+    var body = document.querySelector('body');
+    // check if body has dark-mode class
+    if (body.classList.contains('dark-version')) {
+        // remove dark-mode class
+        body.classList.remove('dark-version');
+        // add light-mode class
+        body.classList.add('white-version');
+        // set cookie to false
+        setCookie('dark-mode', 'false', 30);
+    }
+    else {
+        // remove light-mode class
+        body.classList.remove('white-version');
+        // add dark-mode class
+        body.classList.add('dark-version');
+        // set cookie to true
+        setCookie('dark-mode', 'true', 30);
+    }
+});

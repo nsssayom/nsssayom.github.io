@@ -593,233 +593,233 @@ button {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-weight: bold; }
 
-.white-vertion.black-bg {
+.white-version.black-bg {
   background-color: #fff; }
-.white-vertion .section-loader {
+.white-version .section-loader {
   background: #fff; }
-.white-vertion ::placeholder {
+.white-version ::placeholder {
   color: #000; }
-.white-vertion a {
+.white-version a {
   color: #000; }
-.white-vertion h2 {
+.white-version h2 {
   color: #000; }
-.white-vertion h3 {
+.white-version h3 {
   color: #000; }
-.white-vertion h4 {
+.white-version h4 {
   color: #000; }
-.white-vertion h5 {
+.white-version h5 {
   color: #000; }
-.white-vertion h6 {
+.white-version h6 {
   color: #000; }
-.white-vertion p {
+.white-version p {
   color: #000; }
-.white-vertion address {
+.white-version address {
   color: #000; }
-.white-vertion span {
+.white-version span {
   color: #000; }
-.white-vertion ul li {
+.white-version ul li {
   color: #000; }
-.white-vertion div {
+.white-version div {
   color: #000; }
-.white-vertion .form-control {
+.white-version .form-control {
   color: #fff; }
-.white-vertion .contact-message {
+.white-version .contact-message {
   color: #fff; }
-.white-vertion .nav-strict {
+.white-version .nav-strict {
   background-color: #fff; }
-.white-vertion .img-color-overlay {
+.white-version .img-color-overlay {
   background-color: rgba(255, 255, 255, 0.9); }
-.white-vertion .dark-bg {
+.white-version .dark-bg {
   background-color: #fff; }
-.white-vertion .mh-home .mh-header-info .mh-promo span {
+.white-version .mh-home .mh-header-info .mh-promo span {
   color: #fff; }
-.white-vertion .mh-project-gallery .grid-item figure figcaption a {
+.white-version .mh-project-gallery .grid-item figure figcaption a {
   color: #fff; }
-.white-vertion .mh-project-gallery .grid-item figure figcaption .title {
+.white-version .mh-project-gallery .grid-item figure figcaption .title {
   color: #fff; }
-.white-vertion .mh-project-gallery .grid-item figure figcaption .sub-title {
+.white-version .mh-project-gallery .grid-item figure figcaption .sub-title {
   color: #fff; }
-.white-vertion .mh-portfolio-modal {
+.white-version .mh-portfolio-modal {
   background: #fff; }
-.white-vertion .page-item.active .page-link {
+.white-version .page-item.active .page-link {
   background-color: #fff;
   border-color: #fff;
   color: #0bceaf; }
-.white-vertion .navbar-toggler .icon,
-.white-vertion .navbar-toggler .icon::after,
-.white-vertion .navbar-toggler .icon::before {
+.white-version .navbar-toggler .icon,
+.white-version .navbar-toggler .icon::after,
+.white-version .navbar-toggler .icon::before {
   background-color: #000; }
-.white-vertion .mh-header .navbar-nav li a {
+.white-version .mh-header .navbar-nav li a {
   color: #000;
   opacity: 0.8; }
-.white-vertion .mh-home .mh-header-info .social-icon li .fa:hover {
+.white-version .mh-home .mh-header-info .social-icon li .fa:hover {
   background-color: #000; }
-.white-vertion h1, .white-vertion h2, .white-vertion h3, .white-vertion h4, .white-vertion h5, .white-vertion h6, .white-vertion p, .white-vertion address, .white-vertion span, .white-vertion q {
+.white-version h1, .white-version h2, .white-version h3, .white-version h4, .white-version h5, .white-version h6, .white-version p, .white-version address, .white-version span, .white-version q {
   opacity: 0.8; }
-.white-vertion .mh-header .navbar-nav li.active a {
+.white-version .mh-header .navbar-nav li.active a {
   padding-right: 0;
   padding-left: 0;
   border-color: #000; }
-.white-vertion .mh-header.nav-3 .navbar-nav li.active a {
+.white-version .mh-header.nav-3 .navbar-nav li.active a {
   border-color: transparent; }
-.white-vertion .mh-footer .form-control {
+.white-version .mh-footer .form-control {
   -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   color: #000; }
-  .white-vertion .mh-footer .form-control:focus {
+  .white-version .mh-footer .form-control:focus {
     -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-.white-vertion .mh-footer .contact-message {
+.white-version .mh-footer .contact-message {
   -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   color: #000; }
-  .white-vertion .mh-footer .contact-message:focus {
+  .white-version .mh-footer .contact-message:focus {
     -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-.white-vertion .mh-footer-2 .form-control {
+.white-version .mh-footer-2 .form-control {
   -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-  .white-vertion .mh-footer-2 .form-control:focus {
+  .white-version .mh-footer-2 .form-control:focus {
     -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-.white-vertion .mh-footer-2 .contact-message {
+.white-version .mh-footer-2 .contact-message {
   -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
   box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-  .white-vertion .mh-footer-2 .contact-message:focus {
+  .white-version .mh-footer-2 .contact-message:focus {
     -webkit-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     -moz-box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8);
     box-shadow: 0 0px 1px 0 rgba(40, 40, 40, 0.8), 0 0px 1px 0px rgba(40, 40, 40, 0.8); }
-.white-vertion .mh-blog .mh-blog-item .blog-inner h2 a {
+.white-version .mh-blog .mh-blog-item .blog-inner h2 a {
   color: #202026; }
-.white-vertion .shadow-1 {
+.white-version .shadow-1 {
   box-shadow: 0px 10px 20px 4px #00000015; }
-.white-vertion .mh-pricing .mh-pricing {
+.white-version .mh-pricing .mh-pricing {
   box-shadow: 0px 10px 20px 4px #00000015; }
-.white-vertion .mh-blog .mh-blog-item {
+.white-version .mh-blog .mh-blog-item {
   box-shadow: 0px 10px 20px 4px #00000015; }
-.white-vertion .mh-experince .mh-education-deatils .mh-education-item {
+.white-version .mh-experince .mh-education-deatils .mh-education-item {
   box-shadow: 0px 10px 20px 4px #00000015; }
-.white-vertion .mh-work .mh-experience-deatils .mh-work-item {
+.white-version .mh-work .mh-experience-deatils .mh-work-item {
   box-shadow: 0px 10px 20px 4px #00000015; }
 
-.dark-vertion {
+.dark-version {
   opacity: 0.9; }
-  .dark-vertion.black-bg {
+  .dark-version.black-bg {
     background-color: #100e17; }
-  .dark-vertion .section-loader {
+  .dark-version .section-loader {
     background: #100e17; }
-  .dark-vertion ::placeholder {
+  .dark-version ::placeholder {
     color: #fff; }
-  .dark-vertion a {
+  .dark-version a {
     color: #fff; }
-  .dark-vertion h2 {
+  .dark-version h2 {
     color: #fff; }
-  .dark-vertion h3 {
+  .dark-version h3 {
     color: #fff; }
-  .dark-vertion h4 {
+  .dark-version h4 {
     color: #fff; }
-  .dark-vertion h5 {
+  .dark-version h5 {
     color: #fff; }
-  .dark-vertion h6 {
+  .dark-version h6 {
     color: #fff; }
-  .dark-vertion p {
+  .dark-version p {
     color: #fff; }
-  .dark-vertion address {
+  .dark-version address {
     color: #fff; }
-  .dark-vertion span {
+  .dark-version span {
     color: #fff; }
-  .dark-vertion div {
+  .dark-version div {
     color: #fff; }
-  .dark-vertion ul li {
+  .dark-version ul li {
     color: #fff; }
-  .dark-vertion .form-control {
+  .dark-version .form-control {
     color: #fff; }
-  .dark-vertion .contact-message {
+  .dark-version .contact-message {
     color: #fff; }
-  .dark-vertion .nav-strict {
+  .dark-version .nav-strict {
     background-color: #202026; }
-  .dark-vertion .img-color-overlay {
+  .dark-version .img-color-overlay {
     background-color: rgba(0, 0, 0, 0.9); }
-  .dark-vertion .mh-home .mh-header-info .social-icon li .fa:hover {
+  .dark-version .mh-home .mh-header-info .social-icon li .fa:hover {
     background-color: #fff; }
-  .dark-vertion .page-item.active .page-link {
+  .dark-version .page-item.active .page-link {
     background-color: #fff;
     border-color: #fff;
     color: #0bceaf; }
-  .dark-vertion .navbar-toggler .icon,
-  .dark-vertion .navbar-toggler .icon::after,
-  .dark-vertion .navbar-toggler .icon::before {
+  .dark-version .navbar-toggler .icon,
+  .dark-version .navbar-toggler .icon::after,
+  .dark-version .navbar-toggler .icon::before {
     background-color: #fff; }
-  .dark-vertion .mh-header .navbar-nav li.active a {
+  .dark-version .mh-header .navbar-nav li.active a {
     border-color: #fff;
     padding-right: 0;
     padding-left: 0; }
-  .dark-vertion .mh-header.nav-3 .navbar-nav li.active a {
+  .dark-version .mh-header.nav-3 .navbar-nav li.active a {
     border-color: transparent; }
-  .dark-vertion .mh-footer .form-control {
+  .dark-version .mh-footer .form-control {
     -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-    .dark-vertion .mh-footer .form-control:focus {
+    .dark-version .mh-footer .form-control:focus {
       -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-  .dark-vertion .mh-footer .contact-message {
+  .dark-version .mh-footer .contact-message {
     -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-    .dark-vertion .mh-footer .contact-message:focus {
+    .dark-version .mh-footer .contact-message:focus {
       -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-  .dark-vertion .mh-footer-2 .form-control {
+  .dark-version .mh-footer-2 .form-control {
     -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-    .dark-vertion .mh-footer-2 .form-control:focus {
+    .dark-version .mh-footer-2 .form-control:focus {
       -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-  .dark-vertion .mh-footer-2 .contact-message {
+  .dark-version .mh-footer-2 .contact-message {
     -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
     box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-    .dark-vertion .mh-footer-2 .contact-message:focus {
+    .dark-version .mh-footer-2 .contact-message:focus {
       -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       -moz-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8);
       box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8), 0 0px 1px 1px rgba(255, 255, 255, 0.8); }
-  .dark-vertion .mh-work .mh-experience-deatils .mh-work-item {
+  .dark-version .mh-work .mh-experience-deatils .mh-work-item {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-pricing .mh-pricing {
+  .dark-version .mh-pricing .mh-pricing {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-blog .mh-blog-item {
+  .dark-version .mh-blog .mh-blog-item {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-footer-address .mh-address-footer-item {
+  .dark-version .mh-footer-address .mh-address-footer-item {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-experince .mh-education-deatils .mh-education-item {
+  .dark-version .mh-experince .mh-education-deatils .mh-education-item {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-service .mh-service-item {
+  .dark-version .mh-service .mh-service-item {
     -webkit-box-shadow: -1rem 0 3rem #000;
     box-shadow: -1rem 0 3rem #000; }
-  .dark-vertion .mh-home .hero-img img {
+  .dark-version .mh-home .hero-img img {
     border: 20px solid rgba(0, 0, 0, 0.4); }
-  .dark-vertion .mh-home .img-border {
+  .dark-version .mh-home .img-border {
     border: 20px solid rgba(0, 0, 0, 0.9); }
-  .dark-vertion .candidatos .parcial .progressBar {
+  .dark-version .candidatos .parcial .progressBar {
     background: rgba(199, 198, 198, 0.6); }
-  .dark-vertion .mh-progress path:nth-child(1) {
+  .dark-version .mh-progress path:nth-child(1) {
     stroke: rgba(255, 255, 255, 0.5); }
 
 .mh-rtl {
