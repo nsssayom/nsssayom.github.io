@@ -1462,7 +1462,7 @@ body {
     padding-bottom: 30px; }
     .mh-blog .mh-blog-item .blog-inner h2 a {
       color: #fff; }
-    .mh-blog .mh-blog-item .blog-inner a {
+    .mh-blog .mh-blog-item .blog-inner a:not(.btn) {
       color: #0bceaf; }
   .mh-blog .mh-blog-item img {
     margin-bottom: 30px; }
