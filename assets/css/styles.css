@@ -1274,8 +1274,8 @@ body {
     line-height: 30px;
     font-weight: 600; }
     .mh-experince .mh-education-deatils .mh-education-item h4 a {
-      font-style: italic;
-      margin-left: 4px;
+      /*font-style: regular;*/
+      margin-left: 0px;
       color: #0bceaf; }
   .mh-experince .mh-education-deatils .mh-education-item .mh-eduyear {
     margin: 10px 0;
@@ -1329,7 +1329,13 @@ body {
         font-size: 10px;
         line-height: 23px;
         margin-right: 10px; }
+    .sub-responsibility{
+        padding-left: 10px;
+    }
 
+    .sub-responsibility > li{
+        padding-left: 15px;
+    }
 /*
     ==============
       Portfolio

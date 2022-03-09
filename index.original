@@ -71,14 +71,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#mh-about">About</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#mh-skills">Skills</a>
-                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-experience">Experiences</a>
+                                <a class="nav-link" href="#mh-skills">Skills</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#mh-service">Research</a>
+                                <a class="nav-link" href="#mh-experience">Experiences</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#mh-portfolio">Portfolio</a>
@@ -192,15 +189,13 @@
                         <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                             A Full Stack System Engineer specializing in Embedded Systems, IoT, Edge Machine
                             Learning, Deep Learning and Web Development. I have graduated Summa Cum Laude from
-                            AIUB with a BSc. degree in Computer Science and Engineering.
+                            AIUB with a BSc degree in Computer Science and Engineering.
                         </p>
 
                         <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             Currently working as a lecturer to enrich
                             my knowledge through teaching and to dedicate my energy and skills on my research works.
-                            My research interest includes <b>Embedded Systems</b>, <b>IoT</b>, <b>Edge ML</b>, and
-                            <b>TinyML</b>.
-                        </p>
+                            My research interest includes Embedded Systems, IoT, Edge ML, and TinyML. </p>
                         <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
                             <ul>
                                 <li><span>C/C++</span></li>
@@ -229,6 +224,159 @@
         </div>
     </section>
 
+    <!--
+        ===================
+           SERVICE
+        ===================
+        -->
+    <section class="mh-service">
+        <div class="container">
+            <div class="row section-separator">
+                <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s"
+                    data-wow-delay="0.2s">
+                    <h2>What I do</h2>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
+                        data-wow-delay="0.3s">
+                        <i class="fa fa-bullseye purple-color"></i>
+                        <h3>UI Design</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
+                        data-wow-delay="0.5s">
+                        <i class="fa fa-code iron-color"></i>
+                        <h3>Web Development</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
+                        data-wow-delay="0.7s">
+                        <i class="fa fa-object-ungroup sky-color"></i>
+                        <h3>App Development</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        ===================
+           SKILLS
+        ===================
+        -->
+    <section class="mh-skills" id="mh-skills">
+        <div class="container">
+            <div class="row section-separator">
+                <div class="section-title text-center col-sm-12">
+                    <!--<h2>Skills</h2>-->
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mh-skills-inner">
+                        <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <h3>Technical Skills</h3>
+                            <div class="each-skills">
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Javascript</div>
+                                            <div class="percentagem-num">86%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 86%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Java</div>
+                                            <div class="percentagem-num">46%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 46%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">Python</div>
+                                            <div class="percentagem-num">38%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 38%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">PHP</div>
+                                            <div class="percentagem-num">17%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 17%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">PHP</div>
+                                            <div class="percentagem-num">17%</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: 17%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                        <h3>Professional Skills</h3>
+                        <ul class="mh-professional-progress">
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="95"></div>
+                                <div class="pr-skill-name">Communication</div>
+                            </li>
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="55"></div>
+                                <div class="pr-skill-name">Team Work</div>
+                            </li>
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="86"></div>
+                                <div class="pr-skill-name">Project Management</div>
+                            </li>
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="60"></div>
+                                <div class="pr-skill-name">Creativity</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--
         ===================
@@ -246,33 +394,29 @@
                                 <!-- Education Institutes-->
                                 <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
                                     data-wow-delay="0.3s">
-                                    <h4>BSc. in Computer Science and Engineering</br>
-                                        <a href="https://www.aiub.edu" target="_blank">American International
-                                            University-bangladesh</a>
-                                    </h4>
-                                    <div class="mh-eduyear">2017-2020</div>
-                                    <p>Graduated <b>Summa Cum Laude</b> with an undergrad thesis on <i>Disaster Victim
-                                            Tracking
-                                            and Rescue Support System with Failsafe Multilayer Communication
-                                            Networks.</i> Awarded Dean's List Honor three times. </p>
+                                    <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a
+                                        page when looking at its layout. The point of using Lorem Ipsum </p>
                                 </div>
                                 <!-- Education Institutes-->
                                 <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
                                     data-wow-delay="0.5s">
-                                    <h4>Higher Secondary Certificate</br>
-                                        <a>Lalmonirhat Govt. College</a>
-                                    </h4>
-                                    <div class="mh-eduyear">2015</div>
-                                    <p>Graduated with GPA 5.00 out of 5.00 from Science group.</p>
+                                    <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a
+                                        page when looking at its layout. The point of using Lorem Ipsum </p>
                                 </div>
                                 <!-- Education Institutes-->
                                 <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                    data-wow-delay="0.7s">
-                                    <h4>Secondary School Certificate</br>
-                                        <a>Lalmonirhat Govt. High School</a>
-                                    </h4>
-                                    <div class="mh-eduyear">2013</div>
-                                    <p>Graduated with GPA 5.00 out of 5.00 from Science Group.</p>
+                                    data-wow-delay="0.6s">
+                                    <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a
+                                        page when looking at its layout. The point of using L orem Ipsum </p>
                                 </div>
                             </div>
                         </div>
@@ -283,67 +427,35 @@
                             <div class="mh-experience-deatils">
                                 <!-- Education Institutes-->
                                 <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                    data-wow-delay="0.3s">
-                                    <h4>Lecturer </br><a href="https://daffodilvarsity.edu.bd/" target="_blank">ETE/ICE,
-                                            Daffodil International University</a></h4>
-                                    <div class="mh-eduyear">January, 2022 - Present</div>
+                                    data-wow-delay="0.4s">
+                                    <h4>UI/UX Designer <a href="#">IronSketch</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
                                     <span>Responsibility :</span>
                                     <ul class="work-responsibility">
-                                        <div class="sub-responsibility">
-                                            Teaching the following courses-
-                                            <li><i class="fa fa-circle"></i>Embedded System Design</li>
-                                            <li><i class="fa fa-circle"></i>Operating Systems</li>
-                                            <li><i class="fa fa-circle"></i>Artificial Intellegence and Neural Network
-                                            </li>
-                                        </div>
-
-                                        <div class="sub-responsibility">
-                                            Working in research projects on-
-                                            <li><i class="fa fa-circle"></i>Embedded Systems and IoT</li>
-                                            <li><i class="fa fa-circle"></i>Edge Machine Learning</li>
-                                        </div>
+                                        <li><i class="fa fa-circle"></i>Validate CSS</li>
+                                        <li><i class="fa fa-circle"></i>Project Management</li>
                                     </ul>
                                 </div>
                                 <!-- Education Institutes-->
                                 <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                    data-wow-delay="0.5s">
-                                    <h4>Embedded Systems Engineer </br><a href="https://hellotask.app/"
-                                            target="_blank">Hellotask</a></h4>
-                                    <div class="mh-eduyear">December, 2020 - December 2021</div>
+                                    data-wow-delay="0.6s">
+                                    <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
                                     <span>Responsibility :</span>
                                     <ul class="work-responsibility">
-                                        <li><i class="fa fa-circle"></i>Designed and prototyped an IoT-enabled
-                                            distributed advertising platform</li>
-                                        <li><i class="fa fa-circle"></i>Developed a full-stack <a
-                                                href="https://manydial.com" target="_blank">voice call broadcasting
-                                                platform</a></li>
-                                        <li><i class="fa fa-circle"></i>Designed and prototyped an IoT self-checkout
-                                            general-purpose vending machine</li>
+                                        <li><i class="fa fa-circle"></i>Validate CSS</li>
+                                        <li><i class="fa fa-circle"></i>Project Management</li>
                                     </ul>
                                 </div>
                                 <!-- Education Institutes-->
-                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.7s"
+                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
                                     data-wow-delay="0.7s">
-                                    <h4>Embedded Systems Engineer (Contractual) </br><a href="https://riseuplabs.com/"
-                                            target="_blank">Riseup Labs</a></h4>
-                                    <div class="mh-eduyear">June, 2020 - December 2020</div>
+                                    <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
+                                    <div class="mh-eduyear">2005-2008</div>
                                     <span>Responsibility :</span>
                                     <ul class="work-responsibility">
-                                        <li><i class="fa fa-circle"></i>Designed and prototyped a voice command-enabled
-                                            remote controller for Walton Android TV</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Education Institutes-->
-                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.9s"
-                                    data-wow-delay="0.9s">
-                                    <h4>Teaching Assistant (Internship) </br><a href="https://www.aiub.edu"
-                                            target="_blank">AIUB</a></h4>
-                                    <div class="mh-eduyear">January, 2020 - May 2021</div>
-                                    <span>Responsibility :</span>
-                                    <ul class="work-responsibility">
-                                        <li><i class="fa fa-circle"></i>Teach and demonstrate Java Programming Language
-                                            to undergrad students.</li>
+                                        <li><i class="fa fa-circle"></i>Validate CSS</li>
+                                        <li><i class="fa fa-circle"></i>Project Management</li>
                                     </ul>
                                 </div>
                             </div>
@@ -353,67 +465,6 @@
             </div>
         </div>
     </section>
-    <!--
-        ===================
-           SERVICE
-        ===================
-        -->
-    <section class="mh-service" id="mh-service">
-        <div class="container">
-            <div class="row section-separator">
-                <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s"
-                    data-wow-delay="0.2s">
-                    <h2>Research </h2>
-                </div>
-                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <div class="mh-education-deatils">
-                    <!-- Paper-->
-                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                        <h5>Bridge Crack Detection Using Dense Convolutional Network (DenseNet)</br>
-                        </h5>
-                        <div class="mh-eduyear">Accepted in <a href="https://icca.aiub.edu/" target="_blank">ICCA
-                                2022</a></div>
-                        <p> </p>
-                    </div>
-                    <!-- Paper-->
-                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <h5>A Deep Convolutional Neural Network-Based Approach to Classify and Detect Crack in Concrete
-                            Surface Using Xception.</br>
-                        </h5>
-                        <div class="mh-eduyear">Accepted in <a href="https://www.ic4irb.org/" target="_blank"> IC4IR
-                                2021</a></div>
-                        <p></p>
-                    </div>
-                    <!-- Paper-->
-                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <h5><a
-                                href="https://www.academia.edu/51001849/Disaster_Victim_Tracking_and_Rescue_Support_System_with_Failsafe_Multilayer_Communication_Networks"
-                                target="_blank">
-                                Disaster Victim Tracking and Rescue Support System with Failsafe Multilayer Communication
-                                Networks</a></br>
-                        </h5>
-                        <div class="mh-eduyear">Undergraduate Thesis</div>
-                        <p></p>
-                    </div>
-
-                    <!-- Paper-->
-                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <h5><a href="https://www.academia.edu/41237427/Realtime_Indoor_Positioning_System_Using_Wireless_Access_Points" target="_blank">
-                            Realtime Indoor Positioning System Using Wireless Access Points
-                        </a></br>
-                        </h5>
-                        <div class="mh-eduyear">Final Paper for Advanced Computer Networking Course</div>
-                        <p></p>
-                    </div>
-                </div>
-                </p>
-            </div>
-
-
-        </div>
-    </section>
-
-
 
     <!--
         ===================
@@ -595,6 +646,71 @@
 
     <!--
         ===================
+           PRICING
+        ===================
+        -->
+    <section class="mh-pricing" id="mh-pricing">
+        <div class="">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Pricing Table</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s"
+                            data-wow-delay="0.3s">
+                            <i class="fa fa-calendar"></i>
+                            <h4>Full-time work</h4>
+                            <p>I am available for full time</p>
+                            <h5>$1500</h5>
+                            <ul>
+                                <li>Web Development</li>
+                                <li>Advetising</li>
+                                <li>Game Development</li>
+                                <li>Music Writing</li>
+                            </ul>
+                            <a href="#" class="btn btn-fill">Hire Me</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s"
+                            data-wow-delay="0.5s">
+                            <i class="fa fa-file"></i>
+                            <h4>Fixed Price Project</h4>
+                            <p>I am available for fixed roles</p>
+                            <h5>$500</h5>
+                            <ul>
+                                <li>Web Development</li>
+                                <li>Advetising</li>
+                                <li>Game Development</li>
+                                <li>Music Writing</li>
+                            </ul>
+                            <a href="#" class="btn btn-fill">Hire Me</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s"
+                            data-wow-delay="0.7s">
+                            <i class="fa fa-hourglass"></i>
+                            <h4>Hourley work</h4>
+                            <p>I am available for Hourley projets</p>
+                            <h5>$50</h5>
+                            <ul>
+                                <li>Web Development</li>
+                                <li>Advetising</li>
+                                <li>Game Development</li>
+                                <li>Music Writing</li>
+                            </ul>
+                            <a href="#" class="btn btn-fill">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        ===================
            BLOG
         ===================
         -->
@@ -669,6 +785,87 @@
         <div class="map-image image-bg">
             <div class="container">
                 <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Contact Me</h3>
+                    </div>
+                    <div class="col-sm-12 mh-footer-address">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4">
+                                <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                    data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                    <div class="each-icon">
+                                        <i class="fa fa-location-arrow"></i>
+                                    </div>
+                                    <div class="each-info">
+                                        <h4>Address</h4>
+                                        <address>
+                                            5th Avenue, 34th floor, <br>
+                                            New york
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                    data-wow-duration="0.8s" data-wow-delay="0.5s">
+                                    <div class="each-icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="each-info">
+                                        <h4>Email</h4>
+                                        <a href="mailto:yourmail@email.com">yourmail@email.com</a><br>
+                                        <a href="mailto:yourmail@email.com">yourmail@email.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="mh-address-footer-item dark-bg shadow-1 wow fadeInUp"
+                                    data-wow-duration="0.8s" data-wow-delay="0.7s">
+                                    <div class="each-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="each-info">
+                                        <h4>Phone</h4>
+                                        <a href="callto:(880)-8976-987">(880)-8976-987</a><br>
+                                        <a href="callto:(880)-8976-987">(880)-8976-987</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <input name="name" class="contact-name form-control" id="name" type="text"
+                                        placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <input name="name" class="contact-email form-control" id="L_name" type="text"
+                                        placeholder="Last Name" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input name="name" class="contact-subject form-control" id="email" type="email"
+                                        placeholder="Your Email" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <textarea class="contact-message" id="message" rows="6" placeholder="Your Message"
+                                        required></textarea>
+                                </div>
+                                <!-- Subject Button -->
+                                <div class="btn-form col-sm-12">
+                                    <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                        <div class="mh-map">
+                            <div id="mh-map" class="shadow-1"></div>
+                        </div>
+                    </div>
                     <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <div class="row">
                             <div class="col-sm-6">
