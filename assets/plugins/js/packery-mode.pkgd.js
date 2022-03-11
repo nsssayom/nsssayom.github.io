@@ -75,7 +75,7 @@ proto.overlaps = function( rect ) {
   var rectRight = rect.x + rect.width;
   var rectBottom = rect.y + rect.height;
 
-  // https://stackoverflow.com/a/306332
+  // http://stackoverflow.com/a/306332
   return this.x < rectRight &&
     thisRight > rect.x &&
     this.y < rectBottom &&
@@ -488,7 +488,7 @@ return Item;
  * Licensed GPLv3 for open source use
  * or Packery Commercial License for commercial use
  *
- * https://packery.metafizzy.co
+ * http://packery.metafizzy.co
  * Copyright 2016 Metafizzy
  */
 

@@ -1,11 +1,11 @@
 /*
  * jQuery One Page Nav Plugin
- * https://github.com/davist11/jQuery-One-Page-Nav
+ * http://github.com/davist11/jQuery-One-Page-Nav
  *
- * Copyright (c) 2010 Trevor Davis (https://trevordavis.net)
+ * Copyright (c) 2010 Trevor Davis (http://trevordavis.net)
  * Dual licensed under the MIT and GPL licenses.
  * Uses the same license as jQuery, see:
- * https://jquery.org/license
+ * http://jquery.org/license
  *
  * @version 3.0.0
  *
