@@ -1917,7 +1917,7 @@ body {
   line-height: 32px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #fff;
+  /*color: #fff;*/
 }
 .mh-blog .mh-blog-item h2 a {
   color: #0bceaf;
