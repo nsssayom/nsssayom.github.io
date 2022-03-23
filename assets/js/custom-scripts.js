@@ -9,7 +9,7 @@
     $(window).on("load", function () {
         $(".section-loader").fadeOut("slow");
 
-        var $container = $('.portfolioContainer');
+        var $container = $('.eduContainer');
         $container.isotope({
             filter: '*',
             animationOptions: {
