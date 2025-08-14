@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --ring: theme(colors.brand.500); }
+
+/* Typography and containers */
+.container-prose { @apply max-w-3xl mx-auto px-6; }
+
+/**************** UI Primitives ****************/
+.glass { @apply bg-white/50 border border-black/5 shadow-[0_0_0_1px_rgba(0,0,0,0.02)] backdrop-blur; }
+.dark .glass { @apply bg-white/5 border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.03)]; }
+
+.card { @apply glass rounded-2xl p-6 transition duration-300 hover:translate-y-[-2px] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)]; }
+
+.tag { @apply inline-flex items-center gap-1 rounded-full border border-black/10 bg-black/5 px-2.5 py-1 text-xs text-neutral-700; }
+.dark .tag { @apply border-white/10 bg-white/5 text-white/80; }
+
+kbd { @apply rounded-md border border-black/10 bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-800 shadow-inner shadow-black/5; }
+.dark kbd { @apply border-white/10 bg-neutral-800 text-neutral-200 shadow-black/30; }
+
+.link-underline { @apply underline decoration-brand-600/40 underline-offset-[6px] hover:decoration-brand-600; }
+.dark .link-underline { @apply decoration-brand-500/40 hover:decoration-brand-500; }
+
+.ring-focus { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-neutral-950; }
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

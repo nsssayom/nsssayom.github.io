@@ -1,0 +1,14 @@
+{
+  "extends": ["eslint:recommended", "plugin:react-hooks/recommended"],
+  "plugins": ["react-refresh"],
+  "env": { "browser": true, "es2022": true },
+  "parserOptions": { "ecmaVersion": 2022, "sourceType": "module", "ecmaFeatures": { "jsx": true } },
+  "settings": { "react": { "version": "detect" } },
+  "rules": {
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ]
+  },
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
