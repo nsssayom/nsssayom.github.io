@@ -477,14 +477,14 @@ p, span, li, .status-text, .research-overview, .timeline-content, .project-descr
 }
 
 [data-theme="light"] .profile-btn.primary {
-  background: var(--bg-surface);
-  color: var(--text-secondary);
+  background: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
 [data-theme="light"] .profile-btn.primary:hover {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: var(--accent-hover);
+  color: var(--bg-primary);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
 }
 
 .avatar-container {
@@ -606,8 +606,8 @@ p, span, li, .status-text, .research-overview, .timeline-content, .project-descr
   width: auto;
   padding: var(--space-2) var(--space-3);
   gap: var(--space-2);
-  background: var(--bg-tertiary);
-  color: var(--text-secondary);
+  background: var(--accent-primary);
+  color: var(--bg-primary);
   font-weight: 500;
   font-size: 14px;
 }
@@ -617,10 +617,10 @@ p, span, li, .status-text, .research-overview, .timeline-content, .project-descr
 }
 
 .profile-btn.primary:hover {
-  background: var(--bg-surface);
-  color: var(--text-primary);
+  background: var(--accent-hover);
+  color: var(--bg-primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 255, 0, 0.3);
 }
 
 /* Research Preview */
