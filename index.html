@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="PhD student in Computer Science at the University of Utah researching cyber-physical systems security, autonomous vehicles, and multi-robot systems.">
-    <meta name="keywords" content="Nazmus Shakib Sayom, PhD, Computer Science, Cyber-Physical Systems, Security, University of Utah, Research, Autonomous Systems">
+    <meta name="keywords" content="Nazmus Shakib Sayom, PhD, Cyber-Physical Systems, Security, University of Utah, Research, Autonomous Systems">
     <meta name="author" content="Nazmus Shakib Sayom">
     
     <!-- Open Graph / Facebook -->
@@ -61,7 +61,7 @@
                 <span>Connect</span>
             </button>
             <button class="theme-switcher" id="theme-switcher" aria-label="Switch theme">
-                <i class="fas fa-palette"></i>
+                <span class="theme-icon" aria-hidden="true"></span>
             </button>
         </div>
     </nav>
@@ -85,7 +85,7 @@
                 <i class="fas fa-paper-plane"></i>
             </button>
             <button class="fab-item theme-switcher-mobile" id="theme-switcher-mobile" aria-label="Switch theme">
-                <i class="fas fa-palette"></i>
+                <span class="theme-icon" aria-hidden="true"></span>
             </button>
         </div>
         <button class="fab-main" id="fab-main" aria-label="Open navigation menu">
@@ -140,7 +140,7 @@
                     </div>
                     
                     <div class="profile-actions">
-                        <a href="assets/files/resume_sayom.pdf" class="profile-btn primary" target="_blank" title="Download Resume">
+                        <a href="assets/files/resume_sayom.pdf" class="profile-btn with-text" target="_blank" title="Download Resume">
                             <i class="fas fa-file-pdf"></i>
                             <span>Resume</span>
                         </a>
@@ -221,12 +221,12 @@
                         <h3>Verification</h3>
                         <p>Multi-Robot Safety</p>
                     </div>
-                    <div class="domain-card" data-domain="security">
+                    <div class="domain-card" data-domain="reverse">
                         <div class="domain-icon">
-                            <i class="fas fa-microchip"></i>
+                            <i class="fas fa-microscope"></i>
                         </div>
-                        <h3>Security</h3>
-                        <p>Embedded Systems</p>
+                        <h3>Reverse Engineering</h3>
+                        <p>Binary analysis for CPS</p>
                     </div>
                 </div>
                 
@@ -269,22 +269,28 @@
                         </div>
                     </div>
                     
-                    <div class="domain-content" id="security">
-                        <h2>Embedded Systems Security</h2>
+                    <div class="domain-content" id="reverse">
+                        <h2>Reverse Engineering</h2>
                         <div class="methodology">
-                            <h4>Foundation</h4>
-                            <p>Building on practical experience developing embedded Linux distributions for ARM platforms, investigating security vulnerabilities and developing secure architectures for resource-constrained environments.</p>
-                            
-                            <h4>Focus Areas</h4>
+                            <h4>Focus</h4>
+                            <p>Vulnerability discovery through binary analysis and reverse engineering, aided by cyber-physical surrogate modeling to guide input generation and state exploration for CPS targets.</p>
+
+                            <h4>Techniques</h4>
                             <div class="focus-grid">
-                                <div class="focus">Secure Boot</div>
-                                <div class="focus">Driver Security</div>
-                                <div class="focus">Network Isolation</div>
-                                <div class="focus">Cryptographic Protocols</div>
+                                <div class="focus">Static Analysis</div>
+                                <div class="focus">Dynamic Instrumentation</div>
+                                <div class="focus">Symbolic Execution</div>
+                                <div class="focus">Firmware Emulation</div>
+                                <div class="focus">Protocol Analysis</div>
                             </div>
-                            
-                            <h4>Industry Connection</h4>
-                            <p>Research directly informed by hands-on experience implementing secure, network-accessible abstractions for device drivers in production systems.</p>
+
+                            <h4>Tooling</h4>
+                            <div class="method-list">
+                                <div class="method">Ghidra</div>
+                                <div class="method">QEMU / Unicorn for emulation</div>
+                                <!-- <div class="method">Frida / DynamoRIO for runtime hooks</div> -->
+                                <div class="method">AFL++/LibFuzzer with model-guided inputs</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -406,16 +412,17 @@
             <div class="portfolio-grid">
                 <div class="project-card featured" data-category="research">
                     <div class="project-image">
-                        <img src="assets/images/portfolio/OpenGaze-API-Response-Group.png" alt="OpenGaze Project">
-                        <div class="project-overlay">
-                            <a href="https://github.com/nsssayom/OpenGaze" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="project-figure">
+                            <img src="assets/images/portfolio/OpenGaze-API-Response-Group.png" alt="OpenGaze Project" class="project-thumbnail" loading="lazy" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-category">Computer Vision API</div>
-                        <h3>OpenGaze</h3>
+                        <h3>OpenGaze <a href="https://github.com/nsssayom/OpenGaze" target="_blank" class="project-github-link"><i class="fab fa-github"></i></a></h3>
                         <p>RESTful web API service for OpenFace facial behavior analysis, providing eye-gaze and head-pose data for research applications.</p>
                         <div class="tech-stack">
                             <span>FastAPI</span>
@@ -427,16 +434,17 @@
                 
                 <div class="project-card" data-category="systems">
                     <div class="project-image">
-                        <img src="assets/images/portfolio/DePen.jpg" alt="DePen Project">
-                        <div class="project-overlay">
-                            <a href="https://github.com/nsssayom/DePen" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="project-figure">
+                            <img src="assets/images/portfolio/DePen.jpg" alt="DePen Project" class="project-thumbnail" loading="lazy" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-category">Embedded Systems</div>
-                        <h3>DePen</h3>
+                        <h3>DePen <a href="https://github.com/nsssayom/DePen" target="_blank" class="project-github-link"><i class="fab fa-github"></i></a></h3>
                         <p>Raspberry Pi Zero powered optical text scanner using computer vision for OCR operations and word definition lookup.</p>
                         <div class="tech-stack">
                             <span>Raspberry Pi</span>
@@ -448,16 +456,17 @@
                 
                 <div class="project-card" data-category="systems">
                     <div class="project-image">
-                        <img src="assets/images/portfolio/talkie.jpg" alt="TALK-E Project">
-                        <div class="project-overlay">
-                            <a href="https://github.com/nsssayom/TALK-E" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="project-figure">
+                            <img src="assets/images/portfolio/talkie.jpg" alt="TALK-E Project" class="project-thumbnail" loading="lazy" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-category">RF Communication</div>
-                        <h3>TALK-E</h3>
+                        <h3>TALK-E <a href="https://github.com/nsssayom/TALK-E" target="_blank" class="project-github-link"><i class="fab fa-github"></i></a></h3>
                         <p>Long-range multi-channel walkie-talkie system with custom pre-amplification for emergency communication scenarios.</p>
                         <div class="tech-stack">
                             <span>Arduino</span>
@@ -469,16 +478,17 @@
                 
                 <div class="project-card" data-category="vision">
                     <div class="project-image">
-                        <img src="assets/images/portfolio/dancing-bees.gif" alt="Dancing Bees Project">
-                        <div class="project-overlay">
-                            <a href="https://github.com/nsssayom/dancing-bees" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <div class="project-figure">
+                            <img src="assets/images/portfolio/dancing-bees.gif" alt="Dancing Bees Project" class="project-thumbnail" loading="lazy" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-category">Data Visualization</div>
-                        <h3>Dancing Bees</h3>
+                        <h3>Dancing Bees <a href="https://github.com/nsssayom/dancing-bees" target="_blank" class="project-github-link"><i class="fab fa-github"></i></a></h3>
                         <p>Python-based trajectory visualization tool for analyzing honey-bee flight patterns from annotated video frames.</p>
                         <div class="tech-stack">
                             <span>Python</span>
@@ -523,7 +533,7 @@
                         <div class="method-info">
                             <h3>Email</h3>
                             <a href="mailto:sayom.shakib@utah.edu">sayom.shakib@utah.edu</a>
-                            <p>Best for research discussions and collaborations</p>
+                            <p>Research discussions and collaborations</p>
                         </div>
                     </div>
                     
@@ -545,7 +555,7 @@
                         <div class="method-info">
                             <h3>Google Scholar</h3>
                             <a href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&hl=en" target="_blank">View Publications</a>
-                            <p>Research publications and citations</p>
+                            <p>Publications and citations</p>
                         </div>
                     </div>
                     
@@ -563,7 +573,7 @@
                 
                 <div class="collaboration-message">
                     <h2>Open to Collaboration</h2>
-                    <p>Open to collaboration on <strong>CPS Security and Safety</strong>, <strong>Reverse Engineering</strong> and related works. Also open for <strong>Summer Internship opportunities in 2026</strong>. Reach out for anything!</p>
+                    <p>Open to collaboration on <strong>CPS Security and Safety</strong>, <strong>Reverse Engineering</strong> and related works. Also open for <strong>Summer Internship opportunities in 2026</strong>. Feel free to reach out!</p>
                 </div>
             </div>
         </section>

@@ -1,8 +1,12 @@
 // Revolutionary Portfolio Interface
 class PortfolioInterface {
         constructor() {
-        this.currentPanel = 'intro';
-        this.theme = localStorage.getItem('theme') || 'dark';
+    this.currentPanel = 'intro';
+    // Use stored theme if present; otherwise fall back to system preference
+    const storedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    this.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+    this.manualThemeOverride = Boolean(storedTheme);
         this.panelScrollPositions = {}; // Store scroll positions for each panel
             this.init();
         }
@@ -18,31 +22,60 @@ class PortfolioInterface {
     }
 
     setupTheme() {
-        document.documentElement.setAttribute('data-theme', this.theme);
-        
         const switcher = document.getElementById('theme-switcher');
         const mobileSwitcher = document.getElementById('theme-switcher-mobile');
-        
+
+        const sunSvg = `\n<svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">\n  <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>\n</svg>`;
+        const moonSvg = `\n<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">\n  <path d=\"M13 6V3M18.5 12V7M14.5 4.5H11.5M21 9.5H16M15.5548 16.8151C16.7829 16.8151 17.9493 16.5506 19 16.0754C17.6867 18.9794 14.7642 21 11.3698 21C6.74731 21 3 17.2527 3 12.6302C3 9.23576 5.02061 6.31331 7.92462 5C7.44944 6.05072 7.18492 7.21708 7.18492 8.44523C7.18492 13.0678 10.9322 16.8151 15.5548 16.8151Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>`;
+
+        const applyTheme = () => {
+            document.documentElement.setAttribute('data-theme', this.theme);
+            // Update icons/labels to reflect current theme
+            const desktopIcon = switcher ? switcher.querySelector('.theme-icon') : null;
+            const mobileIcon = mobileSwitcher ? mobileSwitcher.querySelector('.theme-icon') : null;
+            const toSun = this.theme === 'light';
+            const desktopLabel = toSun ? 'Switch to dark theme' : 'Switch to light theme';
+            const mobileLabel = desktopLabel;
+            const setIcon = (el) => {
+                if (!el) return;
+                el.innerHTML = this.theme === 'light' ? sunSvg : moonSvg;
+            };
+            setIcon(desktopIcon);
+            setIcon(mobileIcon);
+            if (switcher) switcher.setAttribute('aria-label', desktopLabel);
+            if (mobileSwitcher) mobileSwitcher.setAttribute('aria-label', mobileLabel);
+        };
+
         const toggleTheme = () => {
             this.theme = this.theme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', this.theme);
+            this.manualThemeOverride = true;
             localStorage.setItem('theme', this.theme);
+            applyTheme();
         };
-        
-        if (switcher) {
-            switcher.addEventListener('click', toggleTheme);
+
+        // Wire up click handlers
+        if (switcher) switcher.addEventListener('click', toggleTheme);
+        if (mobileSwitcher) mobileSwitcher.addEventListener('click', toggleTheme);
+
+        // React to system theme changes only if user hasn't manually overridden
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')) {
+            const media = window.matchMedia('(prefers-color-scheme: dark)');
+            media.addEventListener('change', (e) => {
+                if (this.manualThemeOverride) return;
+                this.theme = e.matches ? 'dark' : 'light';
+                applyTheme();
+            });
         }
-        
-        if (mobileSwitcher) {
-            mobileSwitcher.addEventListener('click', toggleTheme);
-        }
+
+        // Initial apply
+        applyTheme();
     }
 
     setupNavigation() {
         const dockItems = document.querySelectorAll('.dock-item');
         
         // Panel order for scroll navigation
-        this.panelOrder = ['intro', 'work', 'timeline', 'portfolio', 'connect'];
+    this.panelOrder = ['intro', 'work', 'timeline', 'portfolio', 'connect'];
         
         dockItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -162,15 +195,33 @@ class PortfolioInterface {
         
         if (!modal) return;
         
-        // Setup click handlers for research thumbnails
+        // Setup click handlers for research thumbnails and project thumbnails/figures
         document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('research-thumbnail')) {
-                const img = e.target;
-                const caption = img.parentElement.querySelector('.figure-caption');
+            const isResearch = e.target.classList.contains('research-thumbnail') || e.target.closest('.research-figure');
+            const isProject = e.target.classList.contains('project-thumbnail') || e.target.closest('.project-figure') || e.target.classList.contains('expand-hint');
+            if (isResearch || isProject) {
+                // Find the image within the figure (supports clicking on overlay/hint)
+                const figure = e.target.closest('.research-figure, .project-figure');
+                const img = figure ? figure.querySelector('img') : e.target;
+                let caption = '';
+                
+                if (isResearch) {
+                    const captionElement = figure ? figure.parentElement.querySelector('.figure-caption') : null;
+                    caption = captionElement ? captionElement.textContent : '';
+                } else if (isProject) {
+                    // For project thumbnails, use the project title as caption (excluding GitHub icon)
+                    const projectCard = figure ? figure.closest('.project-card') : img.closest('.project-card');
+                    const titleElement = projectCard ? projectCard.querySelector('h3') : null;
+                    if (titleElement) {
+                        // Get only the text content, excluding the GitHub link
+                        const titleText = titleElement.childNodes[0] ? titleElement.childNodes[0].textContent.trim() : titleElement.textContent.trim();
+                        caption = titleText;
+                    }
+                }
                 
                 modalImage.src = img.src;
                 modalImage.alt = img.alt;
-                modalCaption.textContent = caption ? caption.textContent : '';
+                modalCaption.textContent = caption;
                 
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
