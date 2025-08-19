@@ -223,6 +223,8 @@ body {
 .workspace {
   min-height: 100vh;
   padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Desktop-only bottom clearance for fixed dock */
