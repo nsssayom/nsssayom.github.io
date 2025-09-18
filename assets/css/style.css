@@ -1282,6 +1282,12 @@ p, span, li, .status-text, .research-overview, .project-description {
   color: var(--text-primary);
 }
 
+.timeline-content-list {
+  list-style: disc;
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
 .timeline-org {
   font-size: 14px;
   color: var(--text-secondary);
