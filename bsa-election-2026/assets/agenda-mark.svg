@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="BSAUU Election 2026 mark">
+  <rect width="96" height="96" rx="24" fill="#063d31"/>
+  <circle cx="61" cy="35" r="16" fill="#d52b1e"/>
+  <path d="M25 62h47" stroke="#f7f3ea" stroke-width="6" stroke-linecap="round"/>
+  <path d="M25 48h28" stroke="#f7f3ea" stroke-width="6" stroke-linecap="round" opacity=".76"/>
+  <path d="M27 35l9 9 23-25" fill="none" stroke="#f7f3ea" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

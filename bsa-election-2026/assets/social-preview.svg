@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <clipPath id="portraitClip">
+      <path d="M742 0h458v630H660L742 0z"/>
+    </clipPath>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8f4eb"/>
+      <stop offset="1" stop-color="#eee4d5"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#f8f4eb"/>
+      <stop offset=".52" stop-color="#f8f4eb" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#f8f4eb" stop-opacity=".18"/>
+    </linearGradient>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0v72" fill="none" stroke="#006a4e" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#paper)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <g clip-path="url(#portraitClip)">
+    <image href="sayom-election.jpg" x="565" y="-170" width="760" height="760" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="640" y="0" width="560" height="630" fill="#063d31" opacity=".16"/>
+  </g>
+  <rect width="850" height="630" fill="url(#shade)"/>
+
+  <path d="M74 92h76" stroke="#d52b1e" stroke-width="8" stroke-linecap="square"/>
+  <text x="74" y="154" fill="#006a4e" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800">BSAUU Election 2026 | Outreach Secretary</text>
+  <text x="72" y="272" fill="#18241f" font-family="Georgia, Times New Roman, serif" font-size="78" font-weight="700">Vote for</text>
+  <text x="72" y="354" fill="#18241f" font-family="Georgia, Times New Roman, serif" font-size="78" font-weight="700">Nazmus Shakib</text>
+  <text x="72" y="436" fill="#18241f" font-family="Georgia, Times New Roman, serif" font-size="78" font-weight="700">Sayom</text>
+  <path d="M76 484h410" stroke="#d52b1e" stroke-width="3" stroke-opacity=".82"/>
+  <text x="76" y="535" fill="#063d31" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">Reach further.</text>
+  <text x="330" y="535" fill="#d52b1e" font-family="Georgia, Times New Roman, serif" font-size="43" font-weight="700">Together.</text>
+  <path d="M76 560h410" stroke="#d52b1e" stroke-width="3" stroke-opacity=".32"/>
+
+  <g transform="translate(910 462)">
+    <rect width="170" height="104" rx="0" fill="#063d31"/>
+    <circle cx="122" cy="32" r="21" fill="#d52b1e"/>
+    <path d="M35 67h92" stroke="#f7f3ea" stroke-width="8" stroke-linecap="round"/>
+    <path d="M36 37l16 16 39-42" fill="none" stroke="#f7f3ea" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
