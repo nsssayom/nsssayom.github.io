@@ -449,8 +449,8 @@ class PortfolioInterface {
                 filter.classList.add('active');
                 
                 cards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    const show = category === 'all' || cardCategory === category;
+                    const cardCategories = (card.getAttribute('data-category') || '').split(/\s+/);
+                    const show = category === 'all' || cardCategories.includes(category);
                     card.style.opacity = show ? '1' : '0.3';
                     card.style.transform = show ? 'scale(1)' : 'scale(0.95)';
                 });

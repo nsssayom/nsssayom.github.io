@@ -180,7 +180,7 @@
                 <i class="fas fa-route"></i>
                 <span>Path</span>
             </button>
-            <button class="dock-item" data-target="portfolio" aria-label="Project Portfolio">
+            <button class="dock-item" data-target="portfolio" aria-label="Projects">
                 <i class="fas fa-hammer"></i>
                 <span>Build</span>
             </button>
@@ -206,7 +206,7 @@
             <button class="fab-item" data-target="timeline" aria-label="Career Timeline">
                 <i class="fas fa-route"></i>
             </button>
-            <button class="fab-item" data-target="portfolio" aria-label="Project Portfolio">
+            <button class="fab-item" data-target="portfolio" aria-label="Projects">
                 <i class="fas fa-hammer"></i>
             </button>
             <button class="fab-item" data-target="connect" aria-label="Connect">
@@ -449,6 +449,59 @@
                     </div>
                 </div>
             </div>
+
+            <section class="publications-section" aria-labelledby="publications-heading">
+                <div class="section-heading">
+                    <h2 id="publications-heading">Selected Publications</h2>
+                </div>
+
+                <div class="publication-list">
+                    <article class="publication-entry">
+                        <div class="publication-main">
+                            <h3>
+                                <a href="https://arxiv.org/abs/2512.02270" target="_blank"
+                                    rel="noopener noreferrer">Property-Guided Cyber-Physical Reduction and
+                                    Surrogation for Safety Analysis in Robotic Vehicles</a>
+                            </h3>
+
+                            <p class="publication-citation">
+                                <a href="https://sayom.me/" target="_blank" rel="noopener noreferrer">Nazmus
+                                    Shakib Sayom</a> and
+                                <a href="https://lagarcia.us/" target="_blank"
+                                    rel="noopener noreferrer">Luis A. Garcia</a>. In
+                                <a href="https://smartsp.eai-conferences.org/2025/" target="_blank"
+                                    rel="noopener noreferrer">Proceedings of the 3rd EAI International Conference on Security and
+                                    Privacy in Cyber-Physical Systems and Smart Vehicles (EAI SmartSP 2025)</a>,
+                                Salt Lake City, UT, USA, December 2025. <a
+                                    href="https://link.springer.com/series/8197" target="_blank"
+                                    rel="noopener noreferrer">Springer LNICST</a>.
+                            </p>
+
+                            <p class="publication-summary">Property-guided co-reduction isolates only the controller
+                                logic and physical dynamics needed for a safety property, then fuzzes the resulting
+                                surrogate to find robotic-vehicle violations without full-system simulation.</p>
+
+                            <p class="publication-links">
+                                <a href="https://arxiv.org/abs/2512.02270" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-file-lines"></i>
+                                    <span>arXiv</span>
+                                </a>
+                                <a href="https://arxiv.org/pdf/2512.02270" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </a>
+                                <a href="https://smartsp.eai-conferences.org/2025/accepted-papers/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-building-columns"></i>
+                                    <span>Conference</span>
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </section>
 
         <!-- Career Timeline Panel -->
@@ -580,10 +633,10 @@
             </div>
         </section>
 
-        <!-- Project Portfolio Panel -->
+        <!-- Projects Panel -->
         <section class="panel" id="portfolio">
             <div class="panel-header">
-                <h1>Project Portfolio</h1>
+                <h1>Projects</h1>
                 <div class="portfolio-filters">
                     <button class="portfolio-filter active" data-filter="all">All Projects</button>
                     <button class="portfolio-filter" data-filter="research">Research</button>
@@ -593,6 +646,33 @@
             </div>
 
             <div class="portfolio-grid">
+                <div class="project-card featured" data-category="research systems">
+                    <div class="project-image">
+                        <div class="project-figure">
+                            <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
+                                alt="Buggy Drone flight trajectory simulation" class="project-thumbnail" loading="lazy" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">CPS Security Research</div>
+                        <h3>Buggy Drone <a href="https://github.com/iotrustlab/buggy_drone" target="_blank"
+                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
+                        <p>Research testbed for reproducing a low-battery parachute deployment flaw using a PyBullet
+                            drone simulation, SCRBE surrogate execution, and STL-guided fuzzing.</p>
+                        <div class="tech-stack">
+                            <span>Research</span>
+                            <span>PyBullet</span>
+                            <span>SCRBE</span>
+                            <span>Fuzzing</span>
+                            <span>STL</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card featured" data-category="research">
                     <div class="project-image">
                         <div class="project-figure">
@@ -694,6 +774,16 @@
                 </div>
 
                 <div class="project-card" data-category="research">
+                    <div class="project-image project-image-clean">
+                        <div class="project-figure">
+                            <img src="assets/images/portfolio/disaster.jpeg" alt="Disaster victim tracking system"
+                                class="project-thumbnail project-thumbnail-contain" />
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-info special">
                         <div class="project-category">Undergraduate Thesis</div>
                         <h3>Disaster Victim Tracking System</h3>
