@@ -209,10 +209,15 @@ class PortfolioInterface {
                     const captionElement = figure ? figure.parentElement.querySelector('.figure-caption') : null;
                     caption = captionElement ? captionElement.textContent : '';
                 } else if (isProject) {
-                    // For project thumbnails, use the project title as caption (excluding GitHub icon)
+                    const customCaption = figure ? figure.getAttribute('data-caption') : '';
+                    if (customCaption) {
+                        caption = customCaption;
+                    }
+
+                    // For project thumbnails, use the project title as fallback caption (excluding GitHub icon)
                     const projectCard = figure ? figure.closest('.project-card') : img.closest('.project-card');
                     const titleElement = projectCard ? projectCard.querySelector('h3') : null;
-                    if (titleElement) {
+                    if (!caption && titleElement) {
                         // Get only the text content, excluding the GitHub link
                         const titleText = titleElement.childNodes[0] ? titleElement.childNodes[0].textContent.trim() : titleElement.textContent.trim();
                         caption = titleText;

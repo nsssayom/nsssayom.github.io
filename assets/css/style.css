@@ -1746,11 +1746,6 @@ p, span, li, .status-text, .research-overview, .project-description {
   transition: all var(--duration-normal) var(--easing);
 }
 
-.contact-method.primary {
-  border: none;
-  background: rgba(0, 102, 204, 0.05);
-}
-
 .contact-method:hover {
   background: var(--bg-tertiary);
   transform: translateY(-2px);
