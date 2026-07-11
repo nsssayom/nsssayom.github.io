@@ -1,24 +1,39 @@
-// Revolutionary Portfolio Interface
+// Portfolio Interface
 class PortfolioInterface {
-        constructor() {
-    this.currentPanel = 'intro';
-    // Use stored theme if present; otherwise fall back to system preference
-    const storedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    this.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
-    this.manualThemeOverride = Boolean(storedTheme);
-        this.panelScrollPositions = {}; // Store scroll positions for each panel
-            this.init();
-        }
+    constructor() {
+        this.currentPanel = 'intro';
+        // Panel order for scroll navigation / keyboard shortcuts
+        this.panelOrder = ['intro', 'work', 'timeline', 'portfolio', 'connect'];
 
-        init() {
+        // Use stored theme if present; otherwise fall back to system preference
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        this.theme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
+        this.manualThemeOverride = Boolean(storedTheme);
+
+        this.init();
+    }
+
+    init() {
         this.setupTheme();
         this.setupNavigation();
         this.setupMobileNavigation();
         this.setupImageModal();
         this.setupInteractions();
         this.setupKeyboard();
+        this.setupMotionPreferences();
         this.initPanels();
+    }
+
+    // Respect prefers-reduced-motion: freeze autoplay videos on the poster frame.
+    setupMotionPreferences() {
+        const prefersReducedMotion = window.matchMedia
+            && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) return;
+        document.querySelectorAll('video[autoplay]').forEach(video => {
+            video.removeAttribute('autoplay');
+            video.pause();
+        });
     }
 
     setupTheme() {
@@ -71,19 +86,29 @@ class PortfolioInterface {
         applyTheme();
     }
 
+    // Single source of truth for the active-nav state, shared by clicks,
+    // scroll-spy and keyboard shortcuts. Also exposes state to assistive tech.
+    updateActiveNav(panelId) {
+        this.currentPanel = panelId;
+        document.querySelectorAll('.dock-item, .fab-item').forEach(item => {
+            const isActive = item.getAttribute('data-target') === panelId;
+            item.classList.toggle('active', isActive);
+            if (isActive) {
+                item.setAttribute('aria-current', 'true');
+            } else {
+                item.removeAttribute('aria-current');
+            }
+        });
+    }
+
     setupNavigation() {
         const dockItems = document.querySelectorAll('.dock-item');
-        
-        // Panel order for scroll navigation
-    this.panelOrder = ['intro', 'work', 'timeline', 'portfolio', 'connect'];
-        
+
         dockItems.forEach(item => {
             item.addEventListener('click', () => {
                 const target = item.getAttribute('data-target');
                 this.scrollToPanel(target);
-                
-                dockItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
+                this.updateActiveNav(target);
             });
         });
 
@@ -91,92 +116,82 @@ class PortfolioInterface {
         this.setupScrollSpy();
 
         // Set initial active state
-        document.querySelector('[data-target="intro"]').classList.add('active');
+        this.updateActiveNav('intro');
     }
 
     setupMobileNavigation() {
         const fabMain = document.getElementById('fab-main');
         const mobileNav = document.getElementById('mobile-nav');
         const fabItems = document.querySelectorAll('.fab-item');
-        
+
         if (!fabMain || !mobileNav) return;
-        
+
+        const setExpanded = (expanded) => {
+            mobileNav.classList.toggle('expanded', expanded);
+            fabMain.setAttribute('aria-expanded', String(expanded));
+        };
+
         // FAB expand/collapse functionality
         fabMain.addEventListener('click', () => {
-            mobileNav.classList.toggle('expanded');
+            setExpanded(!mobileNav.classList.contains('expanded'));
         });
-        
+
         // Close FAB when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileNav.contains(e.target)) {
-                mobileNav.classList.remove('expanded');
+                setExpanded(false);
             }
         });
-        
+
+        // Close FAB on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('expanded')) {
+                setExpanded(false);
+                fabMain.focus();
+            }
+        });
+
         // FAB item navigation
         fabItems.forEach(item => {
             if (item.classList.contains('theme-switcher-mobile')) return; // Skip theme switcher
-            
+
             item.addEventListener('click', () => {
                 const target = item.getAttribute('data-target');
                 this.scrollToPanel(target);
-                
-                // Update active states for both desktop and mobile
-                document.querySelectorAll('.dock-item, .fab-item').forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                const deskTopItem = document.querySelector(`.dock-item[data-target="${target}"]`);
-                if (deskTopItem) deskTopItem.classList.add('active');
-                
+                this.updateActiveNav(target);
+
                 // Close FAB menu after selection
-                mobileNav.classList.remove('expanded');
+                setExpanded(false);
             });
         });
-        
     }
-    
+
     scrollToPanel(panelId) {
         const targetPanel = document.getElementById(panelId);
         if (targetPanel) {
-            targetPanel.scrollIntoView({ 
+            targetPanel.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
             this.currentPanel = panelId;
         }
     }
-    
+
     setupScrollSpy() {
         const options = {
             root: null,
             rootMargin: '-50% 0px -50% 0px',
             threshold: 0
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const panelId = entry.target.id;
-                    this.currentPanel = panelId;
-                    
-                    // Update dock active states
-                    document.querySelectorAll('.dock-item, .fab-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    
-                    const dockItem = document.querySelector(`[data-target="${panelId}"]`);
-                    if (dockItem) {
-                        dockItem.classList.add('active');
-                    }
-                    
-                    // Update mobile FAB if exists
-                    const fabItem = document.querySelector(`.fab-item[data-target="${panelId}"]`);
-                    if (fabItem) {
-                        fabItem.classList.add('active');
-                    }
+                    this.updateActiveNav(entry.target.id);
                 }
             });
         }, options);
-        
+
         // Observe all panels
         this.panelOrder.forEach(panelId => {
             const panel = document.getElementById(panelId);
@@ -192,209 +207,88 @@ class PortfolioInterface {
         const modalCaption = document.getElementById('modal-caption');
         const modalClose = document.getElementById('modal-close');
         const modalOverlay = document.querySelector('.modal-overlay');
-        
-        if (!modal) return;
-        
-        // Setup click handlers for research thumbnails and project thumbnails/figures
-        document.addEventListener('click', (e) => {
-            const isResearch = e.target.classList.contains('research-thumbnail') || e.target.closest('.research-figure');
-            const isProject = e.target.classList.contains('project-thumbnail') || e.target.closest('.project-figure') || e.target.classList.contains('expand-hint');
-            if (isResearch || isProject) {
-                // Find the image within the figure (supports clicking on overlay/hint)
-                const figure = e.target.closest('.research-figure, .project-figure');
-                const img = figure ? figure.querySelector('img') : e.target;
-                let caption = '';
-                
-                if (isResearch) {
-                    const captionElement = figure ? figure.parentElement.querySelector('.figure-caption') : null;
-                    caption = captionElement ? captionElement.textContent : '';
-                } else if (isProject) {
-                    const customCaption = figure ? figure.getAttribute('data-caption') : '';
-                    if (customCaption) {
-                        caption = customCaption;
-                    }
 
-                    // For project thumbnails, use the project title as fallback caption (excluding GitHub icon)
-                    const projectCard = figure ? figure.closest('.project-card') : img.closest('.project-card');
-                    const titleElement = projectCard ? projectCard.querySelector('h3') : null;
-                    if (!caption && titleElement) {
-                        // Get only the text content, excluding the GitHub link
-                        const titleText = titleElement.childNodes[0] ? titleElement.childNodes[0].textContent.trim() : titleElement.textContent.trim();
-                        caption = titleText;
-                    }
-                }
-                
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-                modalCaption.textContent = caption;
-                
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+        if (!modal) return;
+
+        // Element that opened the modal, so focus can be returned on close
+        let lastTrigger = null;
+
+        const captionFor = (figure) => {
+            if (figure.classList.contains('research-figure')) {
+                const captionElement = figure.parentElement
+                    ? figure.parentElement.querySelector('.figure-caption')
+                    : null;
+                return captionElement ? captionElement.textContent : '';
             }
-        });
-        
-        // Close modal handlers
+
+            const customCaption = figure.getAttribute('data-caption');
+            if (customCaption) return customCaption;
+
+            // Fall back to the project title (excluding the GitHub icon link)
+            const projectCard = figure.closest('.project-card');
+            const titleElement = projectCard ? projectCard.querySelector('h3') : null;
+            if (!titleElement) return '';
+            return titleElement.childNodes[0]
+                ? titleElement.childNodes[0].textContent.trim()
+                : titleElement.textContent.trim();
+        };
+
+        const openModal = (figure) => {
+            const img = figure ? figure.querySelector('img') : null;
+            if (!img) return;
+
+            modalImage.src = img.src;
+            modalImage.alt = img.alt || '';
+            modalCaption.textContent = captionFor(figure);
+
+            lastTrigger = figure;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            if (modalClose) modalClose.focus();
+        };
+
         const closeModal = () => {
             modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            if (lastTrigger && typeof lastTrigger.focus === 'function') {
+                lastTrigger.focus();
+            }
+            lastTrigger = null;
         };
-        
-        if (modalClose) {
-            modalClose.addEventListener('click', closeModal);
-        }
-        
-        if (modalOverlay) {
-            modalOverlay.addEventListener('click', closeModal);
-        }
-        
-        // ESC key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-    }
 
-    setupScrollNavigation() {
-        let isScrollingContent = false;
-        let lastPanelSwitch = 0;
-        const switchCooldown = 1000;
+        // Make every figure operable by mouse AND keyboard.
+        document.querySelectorAll('.research-figure, .project-figure').forEach(figure => {
+            const img = figure.querySelector('img');
+            figure.setAttribute('role', 'button');
+            figure.setAttribute('tabindex', '0');
+            figure.setAttribute('aria-label', img && img.alt ? `Enlarge image: ${img.alt}` : 'Enlarge image');
 
-        document.addEventListener('wheel', (e) => {
-            const activePanel = document.querySelector('.panel.active');
-            if (!activePanel) return;
-
-            const now = Date.now();
-            if (now - lastPanelSwitch < switchCooldown) {
-                e.preventDefault();
-                return;
-            }
-
-            const hasScrollableContent = activePanel.scrollHeight > activePanel.clientHeight;
-            
-            if (!hasScrollableContent) {
-                // No scrollable content - switch panels immediately
-                e.preventDefault();
-                this.switchToNextPanel(e.deltaY > 0);
-                lastPanelSwitch = now;
-                return;
-            }
-
-            // Content is scrollable - check if at boundaries
-            const scrollTop = activePanel.scrollTop;
-            const scrollHeight = activePanel.scrollHeight;
-            const clientHeight = activePanel.clientHeight;
-            const isAtTop = scrollTop <= 1;
-            const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
-
-            if (e.deltaY > 0 && isAtBottom) {
-                // Scrolling down and at bottom - switch to next panel
-                e.preventDefault();
-                this.switchToNextPanel(true);
-                lastPanelSwitch = now;
-            } else if (e.deltaY < 0 && isAtTop) {
-                // Scrolling up and at top - switch to previous panel
-                e.preventDefault();
-                this.switchToNextPanel(false);
-                lastPanelSwitch = now;
-            }
-            // Otherwise, let natural scrolling happen (don't prevent default)
-        });
-    }
-
-    setupSmartScrollNavigation() {
-        let lastSwitchTime = 0;
-        const switchCooldown = 1000;
-        let currentScrollListener = null;
-        
-        // Function to setup scroll listener on the active panel
-        const setupPanelScrollListener = () => {
-            // Remove previous listener if exists
-            if (currentScrollListener) {
-                currentScrollListener.element.removeEventListener('scroll', currentScrollListener.handler);
-            }
-            
-            const activePanel = document.querySelector('.panel.active');
-            if (!activePanel) return;
-            
-            const scrollHandler = () => {
-                const now = Date.now();
-                if (now - lastSwitchTime < switchCooldown) return;
-                
-                // Get precise measurements
-                const scrollTop = activePanel.scrollTop;
-                const scrollHeight = activePanel.scrollHeight;
-                const clientHeight = activePanel.clientHeight;
-                
-                // Only proceed if content is actually scrollable
-                if (scrollHeight <= clientHeight) return;
-                
-                // Check if at boundaries with minimal tolerance
-                const isAtTop = scrollTop <= 1;
-                const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
-                
-                // Don't do anything yet - we need wheel event to trigger action
-            };
-            
-            activePanel.addEventListener('scroll', scrollHandler, { passive: true });
-            currentScrollListener = { element: activePanel, handler: scrollHandler };
-        };
-        
-        // Setup initial listener
-        setupPanelScrollListener();
-        
-        // Re-setup listener when panels change
-        const originalSwitchPanel = this.switchPanel.bind(this);
-        this.switchPanel = (panelId) => {
-            originalSwitchPanel(panelId);
-            setTimeout(setupPanelScrollListener, 100); // Setup after panel switch
-        };
-        
-        // Handle wheel events for panel switching
-        document.addEventListener('wheel', (e) => {
-            const activePanel = document.querySelector('.panel.active');
-            if (!activePanel) return;
-            
-            const now = Date.now();
-            if (now - lastSwitchTime < switchCooldown) return;
-            
-            // Get current scroll measurements
-            const scrollTop = activePanel.scrollTop;
-            const scrollHeight = activePanel.scrollHeight;
-            const clientHeight = activePanel.clientHeight;
-            
-            // If content is not scrollable, switch panels immediately
-            if (scrollHeight <= clientHeight) {
-                e.preventDefault();
-                if (e.deltaY > 0) {
-                    this.switchToNextPanel(true);
-                } else {
-                    this.switchToNextPanel(false);
+            figure.addEventListener('click', () => openModal(figure));
+            figure.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    openModal(figure);
                 }
-                lastSwitchTime = now;
-                return;
-            }
-            
-            // Check if we're at boundaries and user is trying to scroll past them
-            const isAtTop = scrollTop <= 1;
-            const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
-            
-            if (e.deltaY > 0 && isAtBottom) {
-                // User is scrolling down and we're at the bottom - switch to next panel
+            });
+        });
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+        // Keyboard handling while the dialog is open: ESC closes, Tab is trapped
+        // (the close button is the only focusable control inside the dialog).
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'Tab') {
                 e.preventDefault();
-                this.switchToNextPanel(true);
-                lastSwitchTime = now;
-            } else if (e.deltaY < 0 && isAtTop) {
-                // User is scrolling up and we're at the top - switch to previous panel
-                e.preventDefault();
-                this.switchToNextPanel(false);
-                lastSwitchTime = now;
+                if (modalClose) modalClose.focus();
             }
-            // Otherwise, let the wheel event scroll naturally within the panel
         });
     }
-
-    // Clean up - no more complex scroll detection needed!
 
     initPanels() {
         // Initialize all panels since they're all visible now
@@ -410,10 +304,10 @@ class PortfolioInterface {
         cards.forEach(card => {
             card.addEventListener('click', () => {
                 const domain = card.getAttribute('data-domain');
-                
+
                 cards.forEach(c => c.classList.remove('active'));
                 card.classList.add('active');
-                
+
                 contents.forEach(content => content.classList.remove('active'));
                 const target = document.getElementById(domain);
                 if (target) target.classList.add('active');
@@ -428,10 +322,10 @@ class PortfolioInterface {
         filters.forEach(filter => {
             filter.addEventListener('click', () => {
                 const category = filter.getAttribute('data-filter');
-                
+
                 filters.forEach(f => f.classList.remove('active'));
                 filter.classList.add('active');
-                
+
                 items.forEach(item => {
                     const itemCategory = item.getAttribute('data-category');
                     item.classList.toggle('visible', category === 'all' || itemCategory === category);
@@ -449,10 +343,10 @@ class PortfolioInterface {
         filters.forEach(filter => {
             filter.addEventListener('click', () => {
                 const category = filter.getAttribute('data-filter');
-                
+
                 filters.forEach(f => f.classList.remove('active'));
                 filter.classList.add('active');
-                
+
                 cards.forEach(card => {
                     const cardCategories = (card.getAttribute('data-category') || '').split(/\s+/);
                     const show = category === 'all' || cardCategories.includes(category);
@@ -464,46 +358,59 @@ class PortfolioInterface {
     }
 
     setupInteractions() {
-        // Clean interactions without background effects
-
-        // Simple Name Typewriter
+        // Name typewriter — honour users who prefer reduced motion.
         const typewriter = document.querySelector('.typewriter');
-        if (typewriter) {
-            const displayText = 'Nazmus Shakib Sayom';
-            typewriter.innerHTML = '';
-            
-            let i = 0;
-            const type = () => {
-                if (i < displayText.length) {
-                    typewriter.innerHTML = displayText.slice(0, i + 1);
-                    i++;
-                    setTimeout(type, 80);
-                } else {
-                    const cursor = document.createElement('span');
-                    cursor.className = 'terminal-cursor';
-                    cursor.innerHTML = '&nbsp;';
-                    typewriter.appendChild(cursor);
-                }
-            };
-            setTimeout(type, 500);
+        if (!typewriter) return;
+
+        const displayText = 'Nazmus Shakib Sayom';
+        const prefersReducedMotion = window.matchMedia
+            && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const appendCursor = () => {
+            const cursor = document.createElement('span');
+            cursor.className = 'terminal-cursor';
+            cursor.innerHTML = '&nbsp;';
+            typewriter.appendChild(cursor);
+        };
+
+        if (prefersReducedMotion) {
+            typewriter.textContent = displayText;
+            appendCursor();
+            return;
         }
+
+        typewriter.textContent = '';
+        let i = 0;
+        const type = () => {
+            if (i < displayText.length) {
+                typewriter.textContent = displayText.slice(0, i + 1);
+                i++;
+                setTimeout(type, 80);
+            } else {
+                appendCursor();
+            }
+        };
+        setTimeout(type, 500);
     }
 
     setupKeyboard() {
+        const panels = { '1': 'intro', '2': 'work', '3': 'timeline', '4': 'portfolio', '5': 'connect' };
+
         document.addEventListener('keydown', (e) => {
-            const panels = { '1': 'intro', '2': 'work', '3': 'timeline', '4': 'portfolio', '5': 'connect' };
-            
-            if (panels[e.key]) {
+            // Don't hijack keys while typing or when a modifier is held
+            if (e.metaKey || e.ctrlKey || e.altKey) return;
+            if (e.target instanceof Element && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+
+            const target = panels[e.key];
+            if (!target) return;
+
             e.preventDefault();
-                this.switchPanel(panels[e.key]);
-                document.querySelectorAll('.dock-item').forEach(i => i.classList.remove('active'));
-                document.querySelector(`[data-target="${panels[e.key]}"]`).classList.add('active');
-                }
-            });
-        }
+            this.scrollToPanel(target);
+            this.updateActiveNav(target);
+        });
     }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     new PortfolioInterface();
-    console.log('🚀 Portfolio Ready');
 });

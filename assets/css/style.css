@@ -222,6 +222,7 @@ body {
 /* Full-Window Layout */
 .workspace {
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 0;
   max-width: 1400px;
   margin: 0 auto;
@@ -242,18 +243,6 @@ body {
 }
 
 /* Remove panel switching - all panels are visible */
-
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Momentum-based smooth scrolling */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
 
 @keyframes panelFadeIn {
   from {
@@ -880,6 +869,7 @@ p, span, li, .status-text, .research-overview, .project-description {
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -908,6 +898,7 @@ p, span, li, .status-text, .research-overview, .project-description {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
+  max-height: 90dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -940,6 +931,7 @@ p, span, li, .status-text, .research-overview, .project-description {
 .modal-image {
   max-width: 100%;
   max-height: 80vh;
+  max-height: 80dvh;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -1564,6 +1556,14 @@ p, span, li, .status-text, .research-overview, .project-description {
   background: #ffffff;
 }
 
+/* Inline looping video used in place of a heavy GIF */
+.project-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project-figure:hover .project-thumbnail {
   transform: scale(1.02);
 }
@@ -1664,6 +1664,31 @@ p, span, li, .status-text, .research-overview, .project-description {
   justify-content: center;
   text-align: center;
   min-height: 200px;
+}
+
+/* Subtle repo/link row for multi-surface projects (e.g. Obadh) */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-3);
+}
+
+.project-links a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1px;
+  transition: color var(--duration-fast) var(--easing),
+    border-color var(--duration-fast) var(--easing);
+}
+
+.project-links a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
 }
 
 .tech-stack {
@@ -1942,7 +1967,7 @@ p, span, li, .status-text, .research-overview, .project-description {
   height: 56px;
   border-radius: 50%;
   background: var(--accent-primary);
-  color: white;
+  color: var(--bg-primary);
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
@@ -2017,13 +2042,13 @@ p, span, li, .status-text, .research-overview, .project-description {
 
 .fab-item:hover {
   background: var(--accent-primary);
-  color: white;
+  color: var(--bg-primary);
   transform: scale(1.1);
 }
 
 .fab-item.active {
   background: var(--accent-primary);
-  color: white;
+  color: var(--bg-primary);
 }
 
 /* Light mode FAB styling */
@@ -2178,14 +2203,23 @@ p, span, li, .status-text, .research-overview, .project-description {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
 
-*:focus {
+/* Show focus rings for keyboard users only, not on mouse/touch clicks */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-.dock-item:focus,
-.theme-switcher:focus {
+.dock-item:focus-visible,
+.theme-switcher:focus-visible {
   outline-offset: 4px;
 }

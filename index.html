@@ -33,6 +33,8 @@
     <link rel="me" href="https://github.com/nsssayom">
     <link rel="me" href="https://www.linkedin.com/in/nsssayom/">
     <link rel="me" href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en">
+    <link rel="me" href="https://iotrustlab.com/people/nsssayom/">
+    <link rel="me" href="https://people.utah.edu/basic.hml?eid=242805512">
 
     <!-- Social sharing -->
     <meta property="og:type" content="website">
@@ -96,7 +98,9 @@
                 "sameAs": [
                     "https://github.com/nsssayom",
                     "https://www.linkedin.com/in/nsssayom/",
-                    "https://scholar.google.com/citations?user=RLNbdK4AAAAJ&hl=en"
+                    "https://scholar.google.com/citations?user=RLNbdK4AAAAJ&hl=en",
+                    "https://iotrustlab.com/people/nsssayom/",
+                    "https://people.utah.edu/basic.hml?eid=242805512"
                 ]
             },
             {
@@ -133,8 +137,40 @@
                 "primaryImageOfPage": {
                     "@id": "https://sayom.me/#primaryimage"
                 },
-                "dateModified": "2026-05-11",
+                "dateModified": "2026-07-10",
                 "inLanguage": "en-US"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "@id": "https://sayom.me/#pub-smartsp2025",
+                "name": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
+                "headline": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
+                "author": [
+                    { "@id": "https://sayom.me/#person" },
+                    { "@type": "Person", "name": "Luis A. Garcia", "url": "https://lagarcia.us/" }
+                ],
+                "datePublished": "2025-12",
+                "url": "https://arxiv.org/abs/2512.02270",
+                "sameAs": "https://arxiv.org/abs/2512.02270",
+                "publisher": { "@type": "Organization", "name": "Springer" },
+                "isPartOf": {
+                    "@type": "CreativeWork",
+                    "name": "Proceedings of the 3rd EAI International Conference on Security and Privacy in Cyber-Physical Systems and Smart Vehicles (EAI SmartSP 2025)"
+                },
+                "about": ["Cyber-Physical Systems Security", "Safety Falsification", "Robotic Vehicles"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "@id": "https://sayom.me/#obadh",
+                "name": "Obadh",
+                "description": "A deterministic Roman-to-Bangla transliteration engine and on-device typing SDK, a modern successor to the Avro Phonetic keyboard.",
+                "url": "https://sayom.me/obadh_engine/",
+                "codeRepository": "https://github.com/nsssayom/obadh_engine",
+                "programmingLanguage": ["Rust", "Swift", "WebAssembly"],
+                "author": { "@id": "https://sayom.me/#person" },
+                "maintainer": { "@id": "https://sayom.me/#person" },
+                "license": "https://opensource.org/licenses/MIT"
             }
         ]
     }
@@ -186,6 +222,7 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
@@ -194,7 +231,7 @@
 
 <body>
     <!-- Navigation Dock -->
-    <nav class="nav-dock" id="nav-dock">
+    <nav class="nav-dock" id="nav-dock" aria-label="Primary">
         <div class="dock-container">
             <button class="dock-item" data-target="intro" aria-label="Introduction">
                 <i class="fas fa-user"></i>
@@ -244,7 +281,8 @@
                 <span class="theme-icon" aria-hidden="true"></span>
             </button>
         </div>
-        <button class="fab-main" id="fab-main" aria-label="Open navigation menu">
+        <button class="fab-main" id="fab-main" aria-label="Toggle navigation menu" aria-expanded="false"
+            aria-controls="fab-menu">
             <i class="fas fa-bars"></i>
             <i class="fas fa-times"></i>
         </button>
@@ -266,7 +304,8 @@
             <div class="intro-grid">
                 <div class="profile-card">
                     <div class="avatar-container">
-                        <img src="assets/images/sayom-ut.png" alt="Nazmus Shakib Sayom" class="avatar">
+                        <img src="assets/images/sayom-ut.png" alt="Nazmus Shakib Sayom" class="avatar" width="400"
+                            height="400" decoding="async">
                         <div class="avatar-overlay">
                             <span class="research-focus">CPS Security</span>
                         </div>
@@ -284,6 +323,11 @@
                         <div class="contact-row">
                             <span class="label">focus</span>
                             <span class="value">Cyber-Physical Systems Security</span>
+                        </div>
+                        <div class="contact-row">
+                            <span class="label">lab</span>
+                            <a href="https://iotrustlab.com/people/nsssayom/" class="value" target="_blank"
+                                rel="noopener noreferrer me">IOTrust Lab</a>
                         </div>
                         <div class="contact-row">
                             <span class="label">advisor</span>
@@ -327,8 +371,14 @@
                             <h3>Property-Guided Falsification for CPS Control Stacks</h3>
                             <div class="research-content">
                                 <div class="research-figure">
-                                    <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
-                                        alt="Drone Flight Trajectory Analysis" class="research-thumbnail" />
+                                    <picture>
+                                        <source
+                                            srcset="assets/images/research/surfCPS/fligh-tragectory-full-simulation.webp"
+                                            type="image/webp">
+                                        <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
+                                            alt="Drone Flight Trajectory Analysis" class="research-thumbnail"
+                                            loading="lazy" decoding="async" />
+                                    </picture>
                                     <div class="expand-hint">
                                         <i class="fas fa-expand"></i>
                                         <span>Click to enlarge</span>
@@ -678,8 +728,13 @@
                 <div class="project-card featured" data-category="research systems">
                     <div class="project-image">
                         <div class="project-figure">
-                            <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
-                                alt="Buggy Drone flight trajectory simulation" class="project-thumbnail" loading="lazy" />
+                            <picture>
+                                <source srcset="assets/images/research/surfCPS/fligh-tragectory-full-simulation.webp"
+                                    type="image/webp">
+                                <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
+                                    alt="Buggy Drone flight trajectory simulation" class="project-thumbnail"
+                                    loading="lazy" decoding="async" />
+                            </picture>
                             <div class="expand-hint">
                                 <i class="fas fa-expand"></i>
                                 <span>Click to enlarge</span>
@@ -703,11 +758,57 @@
                     </div>
                 </div>
 
-                <div class="project-card featured" data-category="research">
+                <div class="project-card featured" data-category="systems">
                     <div class="project-image">
                         <div class="project-figure">
-                            <img src="assets/images/portfolio/OpenGaze-API-Response-Group.png" alt="OpenGaze Project"
-                                class="project-thumbnail" loading="lazy" />
+                            <picture>
+                                <source srcset="assets/images/portfolio/obadh-card.webp" type="image/webp">
+                                <img src="assets/images/portfolio/obadh-card.jpg"
+                                    alt="Obadh Bangla transliteration keyboard: the app mark and tagline beside the native iOS keyboard"
+                                    class="project-thumbnail" loading="lazy" decoding="async" />
+                            </picture>
+                            <div class="expand-hint">
+                                <i class="fas fa-expand"></i>
+                                <span>Click to enlarge</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Open Source · Developer &amp; Maintainer</div>
+                        <h3>Obadh <a href="https://github.com/nsssayom/obadh_engine" target="_blank"
+                                rel="noopener noreferrer" class="project-github-link"><i class="fab fa-github"></i></a>
+                        </h3>
+                        <p>A deterministic Roman-to-Bangla transliteration engine, a modern successor to Avro
+                            Phonetic, with autocorrect and next-word autosuggest layered above the rule-based core.
+                            The Rust engine powers native keyboards, starting with iOS.</p>
+                        <p class="project-links">
+                            <a href="https://github.com/nsssayom/obadh_engine" target="_blank"
+                                rel="noopener noreferrer">Engine</a>
+                            <a href="https://github.com/nsssayom/obadh-ios" target="_blank"
+                                rel="noopener noreferrer">iOS keyboard</a>
+                            <a href="https://sayom.me/obadh_engine/" target="_blank"
+                                rel="noopener noreferrer">Playground</a>
+                        </p>
+                        <div class="tech-stack">
+                            <span>Rust</span>
+                            <span>WASM</span>
+                            <span>Swift</span>
+                            <span>FST</span>
+                            <span>n-gram</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card featured" data-category="research vision">
+                    <div class="project-image">
+                        <div class="project-figure">
+                            <picture>
+                                <source srcset="assets/images/portfolio/OpenGaze-API-Response-Group.webp"
+                                    type="image/webp">
+                                <img src="assets/images/portfolio/OpenGaze-API-Response-Group.png"
+                                    alt="OpenGaze facial-behavior analysis API response" class="project-thumbnail"
+                                    loading="lazy" decoding="async" />
+                            </picture>
                             <div class="expand-hint">
                                 <i class="fas fa-expand"></i>
                                 <span>Click to enlarge</span>
@@ -729,10 +830,10 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="systems">
+                <div class="project-card" data-category="systems vision">
                     <div class="project-image">
                         <div class="project-figure">
-                            <img src="assets/images/portfolio/DePen.jpg" alt="DePen Project" class="project-thumbnail"
+                            <img src="assets/images/portfolio/DePen.jpg" alt="DePen optical text scanner" class="project-thumbnail"
                                 loading="lazy" />
                             <div class="expand-hint">
                                 <i class="fas fa-expand"></i>
@@ -781,38 +882,13 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="vision">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <img src="assets/images/portfolio/dancing-bees.gif" alt="Dancing Bees Project"
-                                class="project-thumbnail" loading="lazy" />
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Data Visualization</div>
-                        <h3>Dancing Bees <a href="https://github.com/nsssayom/dancing-bees" target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
-                        <p>Python-based trajectory visualization tool for analyzing honey-bee flight patterns from
-                            annotated video frames.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Visualization</span>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="project-card" data-category="research">
                     <div class="project-image project-image-clean">
                         <div class="project-figure"
                             data-caption="An AI depiction of the system in use, generated with Google's Nano Banana 2.">
                             <img src="assets/images/portfolio/disaster.jpeg" alt="Disaster victim tracking system"
-                                class="project-thumbnail project-thumbnail-contain" />
+                                class="project-thumbnail project-thumbnail-contain" loading="lazy"
+                                decoding="async" />
                             <div class="expand-hint">
                                 <i class="fas fa-expand"></i>
                                 <span>Click to enlarge</span>
@@ -893,6 +969,18 @@
                             <p>Professional network and career updates</p>
                         </div>
                     </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="method-info">
+                            <h3>Research Lab</h3>
+                            <a href="https://iotrustlab.com/people/nsssayom/" target="_blank"
+                                rel="noopener noreferrer me">IOTrust Lab · University of Utah</a>
+                            <p>Advisor, group, and current research profile</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="collaboration-message">
@@ -906,13 +994,14 @@
     </main>
 
     <!-- Image Modal -->
-    <div class="image-modal" id="image-modal">
+    <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Enlarged image"
+        aria-hidden="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close modal">
+            <button class="modal-close" id="modal-close" aria-label="Close image">
                 <i class="fas fa-times"></i>
             </button>
-            <img class="modal-image" id="modal-image" src="" alt="" />
+            <img class="modal-image" id="modal-image" alt="" />
             <div class="modal-caption" id="modal-caption"></div>
         </div>
     </div>
