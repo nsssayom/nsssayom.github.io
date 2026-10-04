@@ -1,1015 +1,1555 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazmus Shakib Sayom | CPS Security Researcher</title>
-
+<html lang="en" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      name="viewport"
+    />
+    <title>Nazmus Shakib Sayom | Research &amp; Systems</title>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y843CB9BRK"></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y843CB9BRK"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-Y843CB9BRK');
+      gtag("config", "G-Y843CB9BRK");
     </script>
-
     <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Nazmus Shakib Sayom is a PhD researcher at the University of Utah working on system verification, autonomous systems safety and security, and cyber-physical systems safety and security.">
-    <meta name="keywords"
-        content="Nazmus Shakib Sayom, Sayom, System Verification, Autonomous Systems Safety and Security, Cyber-Physical Systems Safety and Security, CPS Safety and Security, Safety Falsification, Robotic Vehicles, University of Utah, PhD Researcher">
-    <meta name="author" content="Nazmus Shakib Sayom">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="color-scheme" content="dark light">
-
-    <link rel="canonical" href="https://sayom.me/">
-    <link rel="sitemap" type="application/xml" href="https://sayom.me/sitemap.xml">
-    <link rel="me" href="https://github.com/nsssayom">
-    <link rel="me" href="https://www.linkedin.com/in/nsssayom/">
-    <link rel="me" href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en">
-    <link rel="me" href="https://iotrustlab.com/people/nsssayom/">
-    <link rel="me" href="https://people.utah.edu/basic.hml?eid=242805512">
-
+    <meta
+      content="Nazmus Shakib Sayom is a PhD researcher at the University of Utah studying safety in robotic systems, with a background in embedded Linux and software engineering."
+      name="description"
+    />
+    <meta content="Nazmus Shakib Sayom" name="author" />
+    <meta
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      name="robots"
+    />
+    <meta content="#101010" name="theme-color" />
+    <meta content="#000000" name="msapplication-TileColor" />
+    <meta content="dark" name="color-scheme" />
+    <link href="https://sayom.me/" rel="canonical" />
+    <link
+      href="https://sayom.me/sitemap.xml"
+      rel="sitemap"
+      type="application/xml"
+    />
+    <link href="https://github.com/nsssayom" rel="me" />
+    <link href="https://www.linkedin.com/in/nsssayom/" rel="me" />
+    <link
+      href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en"
+      rel="me"
+    />
+    <link href="https://iotrustlab.com/people/nsssayom/" rel="me" />
+    <link href="https://people.utah.edu/basic.hml?eid=242805512" rel="me" />
     <!-- Social sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Nazmus Shakib Sayom">
-    <meta property="og:url" content="https://sayom.me/">
-    <meta property="og:title" content="Nazmus Shakib Sayom | CPS Security Researcher">
-    <meta property="og:description"
-        content="PhD researcher at the University of Utah working on system verification, autonomous systems safety and security, and cyber-physical systems safety and security.">
-    <meta property="og:image" content="https://sayom.me/assets/images/social-preview.png">
-    <meta property="og:image:secure_url" content="https://sayom.me/assets/images/social-preview.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt"
-        content="Nazmus Shakib Sayom research portfolio preview with portrait and cyber-physical systems security focus.">
-    <meta property="og:locale" content="en_US">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://sayom.me/">
-    <meta name="twitter:title" content="Nazmus Shakib Sayom | CPS Security Researcher">
-    <meta name="twitter:description"
-        content="PhD researcher at the University of Utah working on system verification, autonomous systems safety and security, and cyber-physical systems safety and security.">
-    <meta name="twitter:image" content="https://sayom.me/assets/images/social-preview.png">
-    <meta name="twitter:image:alt"
-        content="Nazmus Shakib Sayom research portfolio preview with portrait and cyber-physical systems security focus.">
-    <meta name="twitter:creator" content="@nsssayom">
-    <meta name="twitter:site" content="@nsssayom">
-
+    <meta content="website" property="og:type" />
+    <meta content="Nazmus Shakib Sayom" property="og:site_name" />
+    <meta content="https://sayom.me/" property="og:url" />
+    <meta
+      content="Nazmus Shakib Sayom | Research &amp; Systems"
+      property="og:title"
+    />
+    <meta
+      content="PhD researcher at the University of Utah studying safety in robotic systems, with a background in embedded Linux and software engineering."
+      property="og:description"
+    />
+    <meta
+      content="https://sayom.me/assets/images/social-preview-v2.png"
+      property="og:image"
+    />
+    <meta
+      content="https://sayom.me/assets/images/social-preview-v2.png"
+      property="og:image:secure_url"
+    />
+    <meta content="image/png" property="og:image:type" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta
+      content="Nazmus Shakib Sayom in terminal-green lettering, with his University of Utah affiliation and cyber-physical systems safety and security research focus."
+      property="og:image:alt"
+    />
+    <meta content="en_US" property="og:locale" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="https://sayom.me/" name="twitter:url" />
+    <meta
+      content="Nazmus Shakib Sayom | Research &amp; Systems"
+      name="twitter:title"
+    />
+    <meta
+      content="PhD researcher at the University of Utah studying safety in robotic systems, with a background in embedded Linux and software engineering."
+      name="twitter:description"
+    />
+    <meta
+      content="https://sayom.me/assets/images/social-preview-v2.png"
+      name="twitter:image"
+    />
+    <meta
+      content="Nazmus Shakib Sayom in terminal-green lettering, with his University of Utah affiliation and cyber-physical systems safety and security research focus."
+      name="twitter:image:alt"
+    />
+    <meta content="@nsssayom" name="twitter:creator" />
+    <meta content="@nsssayom" name="twitter:site" />
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@graph": [
-            {
+          {
+            "@type": "Person",
+            "@id": "https://sayom.me/#person",
+            "name": "Nazmus Shakib Sayom",
+            "alternateName": "Sayom",
+            "url": "https://sayom.me/",
+            "image": "https://sayom.me/assets/images/sayom-ut.webp",
+            "jobTitle": "PhD Researcher",
+            "award": [
+              "Honorable Mention, Minds and Machines: AI in Education Hackathon 2026 — Team Mithril, Assign",
+              "Summa Cum Laude, American International University-Bangladesh",
+              "Dean’s List, American International University-Bangladesh — three-time recipient",
+              "Champion, Mobile App Showcasing, AIUB CS Fest 2017 — Team Bangla Platoon",
+              "First Place, AIUB Physics Quiz Contest 2017"
+            ],
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Utah",
+              "url": "https://www.utah.edu/"
+            },
+            "worksFor": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Utah",
+              "url": "https://www.utah.edu/"
+            },
+            "knowsAbout": [
+              "System Verification",
+              "Autonomous Systems Safety and Security",
+              "Cyber-Physical Systems Safety and Security",
+              "Robotic Vehicles",
+              "Safety Falsification"
+            ],
+            "sameAs": [
+              "https://github.com/nsssayom",
+              "https://www.linkedin.com/in/nsssayom/",
+              "https://scholar.google.com/citations?user=RLNbdK4AAAAJ&hl=en",
+              "https://iotrustlab.com/people/nsssayom/",
+              "https://people.utah.edu/basic.hml?eid=242805512"
+            ]
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://sayom.me/#primaryimage",
+            "url": "https://sayom.me/assets/images/social-preview-v2.png",
+            "width": 1200,
+            "height": 630,
+            "caption": "Nazmus Shakib Sayom research portfolio"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://sayom.me/#website",
+            "url": "https://sayom.me/",
+            "name": "Nazmus Shakib Sayom",
+            "description": "Research portfolio for Nazmus Shakib Sayom, PhD researcher in system verification and cyber-physical systems safety and security.",
+            "publisher": {
+              "@id": "https://sayom.me/#person"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://sayom.me/#webpage",
+            "url": "https://sayom.me/",
+            "name": "Nazmus Shakib Sayom | Research & Systems",
+            "description": "PhD researcher at the University of Utah studying safety in robotic systems, with a background in embedded Linux and software engineering.",
+            "isPartOf": {
+              "@id": "https://sayom.me/#website"
+            },
+            "about": {
+              "@id": "https://sayom.me/#person"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://sayom.me/#primaryimage"
+            },
+            "dateModified": "2026-10-04",
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://sayom.me/#person"
+            },
+            "hasPart": [
+              {
+                "@id": "https://sayom.me/#pub-smartsp2025"
+              },
+              {
+                "@id": "https://sayom.me/#obadh"
+              }
+            ]
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://sayom.me/#pub-smartsp2025",
+            "name": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
+            "headline": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
+            "author": [
+              {
+                "@id": "https://sayom.me/#person"
+              },
+              {
                 "@type": "Person",
-                "@id": "https://sayom.me/#person",
-                "name": "Nazmus Shakib Sayom",
-                "alternateName": "Sayom",
-                "url": "https://sayom.me/",
-                "image": {
-                    "@id": "https://sayom.me/#primaryimage"
-                },
-                "jobTitle": "PhD Researcher",
-                "affiliation": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "University of Utah",
-                    "url": "https://www.utah.edu/"
-                },
-                "worksFor": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "University of Utah",
-                    "url": "https://www.utah.edu/"
-                },
-                "knowsAbout": [
-                    "System Verification",
-                    "Autonomous Systems Safety and Security",
-                    "Cyber-Physical Systems Safety and Security",
-                    "Robotic Vehicles",
-                    "Safety Falsification"
-                ],
-                "sameAs": [
-                    "https://github.com/nsssayom",
-                    "https://www.linkedin.com/in/nsssayom/",
-                    "https://scholar.google.com/citations?user=RLNbdK4AAAAJ&hl=en",
-                    "https://iotrustlab.com/people/nsssayom/",
-                    "https://people.utah.edu/basic.hml?eid=242805512"
-                ]
+                "name": "Luis Garcia",
+                "url": "https://lagarcia.us/"
+              }
+            ],
+            "datePublished": "2026-09-02",
+            "url": "https://link.springer.com/chapter/10.1007/978-3-032-33701-6_2",
+            "sameAs": [
+              "https://doi.org/10.1007/978-3-032-33701-6_2",
+              "https://arxiv.org/abs/2512.02270"
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Springer"
             },
-            {
-                "@type": "ImageObject",
-                "@id": "https://sayom.me/#primaryimage",
-                "url": "https://sayom.me/assets/images/social-preview.png",
-                "width": 1200,
-                "height": 630,
-                "caption": "Nazmus Shakib Sayom research portfolio"
+            "isPartOf": {
+              "@type": "Book",
+              "name": "Security and Privacy in Cyber-Physical Systems and Smart Vehicles (SmartSP 2025)",
+              "isbn": "978-3-032-33701-6",
+              "isPartOf": {
+                "@type": "BookSeries",
+                "name": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering"
+              }
             },
-            {
-                "@type": "WebSite",
-                "@id": "https://sayom.me/#website",
-                "url": "https://sayom.me/",
-                "name": "Nazmus Shakib Sayom",
-                "description": "Research portfolio for Nazmus Shakib Sayom, PhD researcher in system verification and cyber-physical systems safety and security.",
-                "publisher": {
-                    "@id": "https://sayom.me/#person"
-                },
-                "inLanguage": "en-US"
+            "about": [
+              "Cyber-Physical Systems Security",
+              "Safety Falsification",
+              "Robotic Vehicles"
+            ],
+            "inLanguage": "en-US",
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "DOI",
+              "value": "10.1007/978-3-032-33701-6_2"
             },
-            {
-                "@type": "WebPage",
-                "@id": "https://sayom.me/#webpage",
-                "url": "https://sayom.me/",
-                "name": "Nazmus Shakib Sayom | CPS Security Researcher",
-                "description": "PhD researcher at the University of Utah working on system verification, autonomous systems safety and security, and cyber-physical systems safety and security.",
-                "isPartOf": {
-                    "@id": "https://sayom.me/#website"
-                },
-                "about": {
-                    "@id": "https://sayom.me/#person"
-                },
-                "primaryImageOfPage": {
-                    "@id": "https://sayom.me/#primaryimage"
-                },
-                "dateModified": "2026-07-10",
-                "inLanguage": "en-US"
+            "pagination": "21-40"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://sayom.me/#obadh",
+            "name": "Obadh",
+            "description": "Bangla typing apps for iPhone, iPad, and Mac, powered by a shared Rust transliteration engine with separate correction and suggestion layers.",
+            "url": "https://obadh.unmukto.org/",
+            "codeRepository": "https://github.com/unmukto-org/obadh_engine",
+            "programmingLanguage": ["Rust", "Swift", "WebAssembly"],
+            "author": {
+              "@id": "https://sayom.me/#person"
             },
-            {
-                "@type": "ScholarlyArticle",
-                "@id": "https://sayom.me/#pub-smartsp2025",
-                "name": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
-                "headline": "Property-Guided Cyber-Physical Reduction and Surrogation for Safety Analysis in Robotic Vehicles",
-                "author": [
-                    { "@id": "https://sayom.me/#person" },
-                    { "@type": "Person", "name": "Luis A. Garcia", "url": "https://lagarcia.us/" }
-                ],
-                "datePublished": "2025-12",
-                "url": "https://arxiv.org/abs/2512.02270",
-                "sameAs": "https://arxiv.org/abs/2512.02270",
-                "publisher": { "@type": "Organization", "name": "Springer" },
-                "isPartOf": {
-                    "@type": "CreativeWork",
-                    "name": "Proceedings of the 3rd EAI International Conference on Security and Privacy in Cyber-Physical Systems and Smart Vehicles (EAI SmartSP 2025)"
-                },
-                "about": ["Cyber-Physical Systems Security", "Safety Falsification", "Robotic Vehicles"],
-                "inLanguage": "en-US"
+            "maintainer": {
+              "@id": "https://sayom.me/#person"
             },
-            {
-                "@type": "SoftwareSourceCode",
-                "@id": "https://sayom.me/#obadh",
-                "name": "Obadh",
-                "description": "A deterministic Roman-to-Bangla transliteration engine and on-device typing SDK, a modern successor to the Avro Phonetic keyboard.",
-                "url": "https://sayom.me/obadh_engine/",
-                "codeRepository": "https://github.com/nsssayom/obadh_engine",
-                "programmingLanguage": ["Rust", "Swift", "WebAssembly"],
-                "author": { "@id": "https://sayom.me/#person" },
-                "maintainer": { "@id": "https://sayom.me/#person" },
-                "license": "https://opensource.org/licenses/MIT"
-            }
+            "license": "https://opensource.org/licenses/MIT"
+          }
         ]
-    }
+      }
     </script>
-
-    <!-- Additional Meta Tags for LLM and AI Services -->
-    <meta name="citation_author" content="Nazmus Shakib Sayom">
-    <meta name="citation_title" content="Nazmus Shakib Sayom - Research Portfolio">
-    <meta name="dcterms.creator" content="Nazmus Shakib Sayom">
-    <meta name="dcterms.subject"
-        content="Computer Science, Cyber-Physical Systems, Security Research, Embedded Systems, Firmware Development">
-    <meta name="dcterms.type" content="Text">
-    <meta name="dcterms.format" content="text/html">
-    <meta name="dcterms.language" content="en">
-
-    <!-- Job/Career-specific Meta Tags -->
-    <meta name="skills"
-        content="Embedded Systems, Firmware Development, Embedded Linux, C/C++, Assembly, ARM, RISC-V, Real-time Systems, Device Drivers, Hardware Security, IoT Security, System Software, Microcontrollers, RTOS">
-    <meta name="job-function"
-        content="Embedded Software Engineer, Firmware Developer, Systems Software Engineer, Embedded Security Engineer">
-    <meta name="industry" content="Technology, Automotive, Aerospace, IoT, Robotics, Defense, Medical Devices">
-    <meta name="experience-level" content="PhD Researcher, Research Experience, Intern-ready, Entry-level">
-    <meta name="technical-expertise"
-        content="Low-level Programming, System Programming, Embedded Security, Hardware-Software Interface, Real-time Computing">
-
-    <!-- Mobile and PWA -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Sayom Research">
-    <meta name="application-name" content="Sayom Research">
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
+    <meta content="strict-origin-when-cross-origin" name="referrer" />
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="alternate icon" href="assets/images/favicon.ico">
-
+    <link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/images/favicon.ico" rel="alternate icon" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&amp;family=Space+Grotesk:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        const saved = localStorage.getItem("theme");
+        document.documentElement.dataset.theme =
+          saved === "light" ? "light" : "dark";
+      } catch (_) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-    <!-- Navigation Dock -->
-    <nav class="nav-dock" id="nav-dock" aria-label="Primary">
-        <div class="dock-container">
-            <button class="dock-item" data-target="intro" aria-label="Introduction">
-                <i class="fas fa-user"></i>
-                <span>Intro</span>
-            </button>
-            <button class="dock-item" data-target="work" aria-label="Research Work">
-                <i class="fas fa-atom"></i>
-                <span>Work</span>
-            </button>
-            <button class="dock-item" data-target="timeline" aria-label="Career Timeline">
-                <i class="fas fa-route"></i>
-                <span>Path</span>
-            </button>
-            <button class="dock-item" data-target="portfolio" aria-label="Projects">
-                <i class="fas fa-hammer"></i>
-                <span>Build</span>
-            </button>
-            <button class="dock-item" data-target="connect" aria-label="Connect">
-                <i class="fas fa-paper-plane"></i>
-                <span>Connect</span>
-            </button>
-            <button class="theme-switcher" id="theme-switcher" aria-label="Switch theme">
-                <span class="theme-icon" aria-hidden="true"></span>
-            </button>
-        </div>
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav aria-label="Primary" class="nav-dock" id="primary-nav">
+      <a aria-current="location" href="#intro">Intro</a>
+      <a href="#work">Research</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#timeline">Career</a>
+      <a href="#connect">Contact</a>
+      <button aria-label="Switch theme" class="theme-switcher" hidden="">
+        <span aria-hidden="true" class="theme-icon">◐</span>
+      </button>
     </nav>
-
-    <!-- Mobile FAB Navigation -->
-    <div class="mobile-nav" id="mobile-nav">
-        <div class="fab-menu" id="fab-menu">
-            <button class="fab-item" data-target="intro" aria-label="Introduction">
-                <i class="fas fa-user"></i>
-            </button>
-            <button class="fab-item" data-target="work" aria-label="Research Work">
-                <i class="fas fa-atom"></i>
-            </button>
-            <button class="fab-item" data-target="timeline" aria-label="Career Timeline">
-                <i class="fas fa-route"></i>
-            </button>
-            <button class="fab-item" data-target="portfolio" aria-label="Projects">
-                <i class="fas fa-hammer"></i>
-            </button>
-            <button class="fab-item" data-target="connect" aria-label="Connect">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-            <button class="fab-item theme-switcher-mobile" id="theme-switcher-mobile" aria-label="Switch theme">
-                <span class="theme-icon" aria-hidden="true"></span>
-            </button>
+    <button
+      class="menu-toggle"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      aria-label="Open navigation menu"
+      hidden
+    >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+      >
+        <path class="menu-bars" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path class="menu-cross" d="m6 6 12 12M6 18 18 6"></path>
+      </svg>
+    </button>
+    <main class="workspace" id="main" tabindex="-1">
+      <section aria-labelledby="name" class="panel intro" id="intro">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            PhD researcher ·
+            <a
+              class="inline-link"
+              href="https://www.utah.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >University of Utah</a
+            >
+          </p>
+          <h1 aria-label="Nazmus Shakib Sayom" class="typewriter" id="name">
+            <span aria-hidden="true" class="typewriter-text"
+              >Nazmus Shakib Sayom</span
+            ><span aria-hidden="true" class="terminal-cursor"></span>
+          </h1>
+          <p class="hero-lead">
+            I study the safety and security of cyber-physical systems.
+          </p>
+          <p class="hero-bio">
+            I’m a Computer Science PhD student at the
+            <a
+              href="https://www.utah.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >University of Utah</a
+            >’s
+            <a
+              href="https://iotrustlab.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >IOTrust Lab</a
+            >, advised by
+            <a
+              href="https://lagarcia.us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Prof. Luis Garcia</a
+            >. My research focuses on system verification and safety
+            falsification for robotic and autonomous systems. My engineering
+            background spans embedded Linux, firmware, and software platforms.
+          </p>
+          <div class="social-links">
+            <a
+              href="assets/files/sayom_resume_oct_2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"
+                ></path>
+                <path d="M14 2v6h6M8 13h8M8 17h5"></path></svg
+              ><span>Résumé</span></a
+            ><a
+              href="https://github.com/nsssayom"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                viewbox="0 0 24 24"
+              >
+                <path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19 4.77 5.07 5.07 0 0 0 18.91 1S17.73.65 15 2.48a13.38 13.38 0 0 0-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 0 0 4 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 18.13V22"
+                ></path></svg
+              ><span>GitHub</span></a
+            ><a
+              href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                viewbox="0 0 24 24"
+              >
+                <path d="m2 9 10-5 10 5-10 5Z"></path>
+                <path d="M6 11v6c3 3 9 3 12 0v-6M22 9v7"></path></svg
+              ><span>Scholar</span></a
+            ><a
+              href="https://www.linkedin.com/in/nsssayom/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                viewbox="0 0 24 24"
+              >
+                <rect height="18" rx="3" width="18" x="3" y="3"></rect>
+                <path d="M7.5 10v7M11.5 17v-7m0 3a3 3 0 0 1 6 0v4"></path>
+                <circle
+                  cx="7.5"
+                  cy="7"
+                  fill="currentColor"
+                  r=".5"
+                ></circle></svg
+              ><span>LinkedIn</span></a
+            ><a href="#connect" data-email hidden
+              ><svg
+                aria-hidden="true"
+                fill="none"
+                focusable="false"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.6"
+                viewbox="0 0 24 24"
+              >
+                <rect height="14" rx="2" width="18" x="3" y="5"></rect>
+                <path d="m3 6 9 7 9-7"></path></svg
+              ><span>Email</span></a
+            >
+          </div>
+          <p class="hero-location">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"></path>
+              <circle cx="12" cy="10" r="2.5"></circle>
+            </svg>
+            <span>Salt Lake City, Utah</span>
+          </p>
         </div>
-        <button class="fab-main" id="fab-main" aria-label="Toggle navigation menu" aria-expanded="false"
-            aria-controls="fab-menu">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <!-- Main Interface -->
-    <main class="workspace">
-        <!-- Introduction Panel -->
-        <section class="panel active" id="intro">
-            <div class="panel-header">
-                <h1 class="typewriter">Nazmus Shakib Sayom</h1>
-                <div class="status-bar">
-                    <span class="status-indicator active"></span>
-                    <span class="status-text">PhD Researcher</span>
-                    <span class="location">University of Utah</span>
-                </div>
+        <figure class="hero-portrait">
+          <img
+            alt="Sayom outdoors at the University of Utah"
+            decoding="async"
+            fetchpriority="high"
+            height="400"
+            src="assets/images/sayom-ut.webp"
+            width="400"
+          />
+        </figure>
+      </section>
+      <section aria-labelledby="research-heading" class="panel" id="work">
+        <div class="section-heading">
+          <div>
+            <h2 id="research-heading">Research</h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Scholar</a
+          >
+        </div>
+        <p class="section-intro">
+          A robot’s safety depends on its software and its physical behavior. I
+          study how much of each we need to model to find a violation of a
+          specific safety property.
+        </p>
+        <article class="publication">
+          <div class="publication-visual">
+            <button
+              class="image-trigger"
+              data-caption="Concept artwork: property-guided cyber-physical reduction."
+            >
+              <img
+                alt="Enlarge a conceptual view of a drone’s battery and altitude signals reduced to an executable surrogate, exposing a blocked emergency-deployment path"
+                class="concept-art sage-art"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/research/property-guided-surrogation.webp"
+                width="900"
+              />
+            </button>
+            <p class="figure-note">
+              Control logic and physical state, reduced around a safety
+              property.
+            </p>
+          </div>
+          <div class="publication-copy">
+            <p class="eyebrow">
+              Selected publication ·
+              <a
+                class="inline-link"
+                href="https://smartsp.eai-conferences.org/2025/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >EAI SmartSP 2025</a
+              >
+            </p>
+            <h3>
+              <a
+                href="https://link.springer.com/chapter/10.1007/978-3-032-33701-6_2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Property-Guided Cyber-Physical Reduction and Surrogation for
+                Safety Analysis in Robotic Vehicles</a
+              >
+            </h3>
+            <p class="authors">
+              Nazmus Shakib Sayom &amp;
+              <a
+                class="inline-link"
+                href="https://lagarcia.us/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Luis Garcia</a
+              ><br /><span class="publication-venue"
+                >SmartSP 2025 · Springer LNICST 699, pp. 21–40<br />Published
+                online September 2026</span
+              >
+            </p>
+            <p>
+              We isolate the controller logic and physical dynamics relevant to
+              a safety property, then test a lightweight executable surrogate.
+              In the drone case study, battery level, altitude, and
+              emergency-control logic are enough to reproduce a flaw: an
+              altitude check blocks parachute deployment despite critical
+              battery. Property-guided fuzzing finds these violations at a
+              fraction of the full simulation cost.
+            </p>
+            <div class="project-links">
+              <a
+                href="https://link.springer.com/chapter/10.1007/978-3-032-33701-6_2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Springer</a
+              ><a
+                href="https://arxiv.org/abs/2512.02270"
+                target="_blank"
+                rel="noopener noreferrer"
+                >arXiv</a
+              ><a
+                href="https://arxiv.org/pdf/2512.02270"
+                target="_blank"
+                rel="noopener noreferrer"
+                >PDF</a
+              ><a
+                href="https://github.com/iotrustlab/buggy_drone"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Code</a
+              >
             </div>
-
-            <div class="intro-grid">
-                <div class="profile-card">
-                    <div class="avatar-container">
-                        <img src="assets/images/sayom-ut.png" alt="Nazmus Shakib Sayom" class="avatar" width="400"
-                            height="400" decoding="async">
-                        <div class="avatar-overlay">
-                            <span class="research-focus">CPS Security</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-matrix">
-                        <div class="contact-row">
-                            <span class="label">email</span>
-                            <a href="mailto:sayom.shakib@utah.edu" class="value">sayom.shakib@utah.edu</a>
-                        </div>
-                        <div class="contact-row">
-                            <span class="label">location</span>
-                            <span class="value">Salt Lake City, UT</span>
-                        </div>
-                        <div class="contact-row">
-                            <span class="label">focus</span>
-                            <span class="value">Cyber-Physical Systems Security</span>
-                        </div>
-                        <div class="contact-row">
-                            <span class="label">lab</span>
-                            <a href="https://iotrustlab.com/people/nsssayom/" class="value" target="_blank"
-                                rel="noopener noreferrer me">IOTrust Lab</a>
-                        </div>
-                        <div class="contact-row">
-                            <span class="label">advisor</span>
-                            <a href="https://lagarcia.us/" class="value" target="_blank"
-                                rel="noopener noreferrer">Dr. Luis Antonio Garcia</a>
-                        </div>
-                        <div class="contact-row">
-                            <span class="label">office</span>
-                            <span class="value">Room 3115, MEB</span>
-                        </div>
-                    </div>
-
-                    <div class="profile-actions">
-                        <a href="assets/files/sayom_resume_sept_2025.pdf" class="profile-btn with-text" target="_blank"
-                            rel="noopener noreferrer" title="Download Resume">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>Resume</span>
-                        </a>
-                        <a href="https://github.com/nsssayom" class="profile-btn" target="_blank"
-                            rel="noopener noreferrer" title="GitHub Profile">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en" class="profile-btn"
-                            target="_blank" rel="noopener noreferrer" title="Google Scholar">
-                            <i class="fas fa-graduation-cap"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nsssayom/" class="profile-btn" target="_blank"
-                            rel="noopener noreferrer" title="LinkedIn Profile">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:sayom.shakib@utah.edu" class="profile-btn" title="Send Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="research-preview">
-                    <h2>Current Research</h2>
-                    <div class="research-stack">
-                        <div class="research-layer">
-                            <h3>Property-Guided Falsification for CPS Control Stacks</h3>
-                            <div class="research-content">
-                                <div class="research-figure">
-                                    <picture>
-                                        <source
-                                            srcset="assets/images/research/surfCPS/fligh-tragectory-full-simulation.webp"
-                                            type="image/webp">
-                                        <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
-                                            alt="Drone Flight Trajectory Analysis" class="research-thumbnail"
-                                            loading="lazy" decoding="async" />
-                                    </picture>
-                                    <div class="expand-hint">
-                                        <i class="fas fa-expand"></i>
-                                        <span>Click to enlarge</span>
-                                    </div>
-                                </div>
-                                <div class="research-text">
-                                    <p>Developing automated techniques to discover security violations in cyber-physical
-                                        systems by building property-scoped reductions of control logic and physical
-                                        dynamics. This research focuses on accelerating violation discovery through
-                                        targeted analysis of critical system properties, with validation on
-                                        industry-standard platforms like PX4 and ArduPilot to bridge the gap between
-                                        theoretical verification and practical autonomous system security.</p>
-                                    <span class="figure-caption"><strong>Figure 1:</strong> Flight trajectory analysis
-                                        demonstrating normal versus low battery emergency descent patterns in simulated
-                                        drone systems</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="research-layer">
-                            <h3>Safety Policy Verification in Multi-Robot Systems</h3>
-                            <p>Investigating the formalization and verification of safety policies in distributed
-                                multi-robot environments where multiple stakeholders operate with varying roles,
-                                permissions, and operational constraints. The work involves developing formal frameworks
-                                for modeling role-based permission constraints, analyzing policy conflicts, and
-                                implementing runtime monitoring systems for applications like autonomous vehicle fleets
-                                and drone swarms.</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </article>
+        <div class="research-notes">
+          <div>
+            <h3>Property-guided falsification</h3>
+            <p>
+              I develop reductions of control logic and physical dynamics around
+              specific safety properties. These smaller models make it possible
+              to search for violations efficiently, then check counterexamples
+              against the original system. My work involves robotic control
+              stacks, including
+              <a
+                class="inline-link"
+                href="https://px4.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >PX4</a
+              >
+              and
+              <a
+                class="inline-link"
+                href="https://ardupilot.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ArduPilot</a
+              >, and software-in-the-loop simulation.
+            </p>
+          </div>
+          <div>
+            <h3>Safety policy verification</h3>
+            <p>
+              I investigate how to formalize safety policies in multi-robot
+              systems where operators have different roles, permissions, and
+              constraints. This includes reasoning about policy conflicts and
+              runtime monitoring for settings such as autonomous vehicle fleets
+              and drone swarms.
+            </p>
+          </div>
+          <div>
+            <h3>Reverse engineering</h3>
+            <p>
+              I’m interested in connecting binary analysis with cyber-physical
+              models to guide vulnerability discovery. Relevant techniques
+              include static analysis, symbolic execution, firmware emulation,
+              and model-guided fuzzing, using tools such as
+              <a
+                class="inline-link"
+                href="https://github.com/NationalSecurityAgency/ghidra"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ghidra</a
+              >,
+              <a
+                class="inline-link"
+                href="https://www.qemu.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >QEMU</a
+              >,
+              <a
+                class="inline-link"
+                href="https://www.unicorn-engine.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Unicorn</a
+              >, and
+              <a
+                class="inline-link"
+                href="https://aflplus.plus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AFL++</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="projects-heading" class="panel" id="portfolio">
+        <div class="section-heading">
+          <div>
+            <h2 id="projects-heading">Selected projects</h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://github.com/nsssayom?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            >More on GitHub</a
+          >
+        </div>
+        <p class="section-intro">
+          Research software, embedded systems, language tools, and computer
+          vision applications.
+        </p>
+        <div
+          aria-label="Filter selected projects"
+          class="portfolio-filters"
+          hidden=""
+          role="group"
+        >
+          <button
+            aria-pressed="true"
+            class="portfolio-filter active"
+            data-filter="all"
+          >
+            All work
+          </button>
+          <button
+            aria-pressed="false"
+            class="portfolio-filter"
+            data-filter="research"
+          >
+            Research
+          </button>
+          <button
+            aria-pressed="false"
+            class="portfolio-filter"
+            data-filter="systems"
+          >
+            Systems &amp; tools
+          </button>
+          <button
+            aria-pressed="false"
+            class="portfolio-filter"
+            data-filter="vision"
+          >
+            Computer vision
+          </button>
+        </div>
+        <p
+          aria-live="polite"
+          class="sr-only"
+          id="filter-status"
+          role="status"
+        ></p>
+        <div class="portfolio-grid">
+          <article class="project-card" data-category="systems" id="obadh">
+            <button
+              class="image-trigger project-image photo-frame"
+              data-caption="Obadh: Bangla typing engine with apps for iPhone, iPad, and Mac. Banner shows the iOS keyboard."
+              style="
+                --photo: url(&quot;/assets/images/portfolio/obadh-card.webp&quot;);
+              "
+            >
+              <img
+                alt="Enlarge the Obadh mark and iOS keyboard preview"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/obadh-card.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Language tooling</p>
+              <h3>Obadh</h3>
+              <p>
+                Bangla typing apps for iPhone, iPad, and Mac, powered by a
+                shared Rust engine. The rule-based transliteration core has
+                separate correction and suggestion layers, with a C ABI for
+                native apps and WebAssembly support for the web.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Rust</li>
+                <li>WebAssembly</li>
+                <li>C ABI</li>
+                <li>Swift</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/unmukto-org/obadh_engine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Engine</a
+                ><a
+                  href="https://github.com/unmukto-org/obadh-ios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >iOS keyboard</a
+                ><a
+                  href="https://github.com/unmukto-org/obadh-macos/releases/latest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Mac app</a
+                ><a
+                  href="https://obadh.unmukto.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Website</a
+                >
+              </div>
             </div>
-
-
+          </article>
+          <article
+            class="project-card"
+            data-category="research systems"
+            id="buggy-drone"
+          >
+            <button
+              class="image-trigger project-image"
+              data-caption="Concept artwork: Buggy Drone."
+            >
+              <img
+                alt="Enlarge a conceptual view of a simulated drone with low battery and a blocked emergency-parachute command"
+                class="concept-art sage-art"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/buggy-drone.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Research testbed</p>
+              <h3>Buggy Drone</h3>
+              <p>
+                A drone simulator and reduced execution pipeline for testing a
+                known parachute-deployment flaw. Includes telemetry, trace
+                visualization, and a property-guided fuzzer for reproducible
+                safety experiments.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Python</li>
+                <li>PyBullet</li>
+                <li>Fuzzing</li>
+                <li>STL</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/iotrustlab/buggy_drone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code &amp; experiments</a
+                ><a
+                  href="https://arxiv.org/abs/2512.02270"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Paper</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="systems"
+            id="meldcx-platform"
+          >
+            <button
+              class="image-trigger project-image concept-frame"
+              data-caption="Concept artwork: Embedded Linux OS and device platform."
+            >
+              <img
+                class="concept-art"
+                src="assets/images/portfolio/meldcx-platform.webp"
+                alt="Enlarge a conceptual illustration of an embedded computer linking a kiosk, document scanner, and banknote recycler"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">
+                <a
+                  class="inline-link"
+                  href="https://www.meldcx.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >meldCX</a
+                >
+                · <span class="project-period">2023–2024</span>
+              </p>
+              <h3>Embedded Linux OS &amp; device platform</h3>
+              <p>
+                A custom Linux OS hosting a service that makes sensitive
+                peripherals accessible to kiosk applications across operating
+                systems. Built and maintained for enterprise ARM single-board
+                computers, with security hardening, reliable OTA updates at
+                scale, and integrations for document scanners, banknote
+                recyclers, and other devices.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>C++</li>
+                <li>Python</li>
+                <li>Yocto</li>
+                <li>MQTT</li>
+                <li>Docker</li>
+                <li>Mender</li>
+              </ul>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="research vision"
+            id="robotic-perception-wfm"
+          >
+            <button
+              class="image-trigger project-image concept-frame"
+              data-caption="Concept artwork: world models for robotic perception."
+            >
+              <img
+                src="assets/images/portfolio/robotic-perception-wfm.webp"
+                data-dark-src="assets/images/portfolio/robotic-perception-wfm.webp"
+                data-light-src="assets/images/portfolio/robotic-perception-wfm-light.webp"
+                alt="Enlarge a conceptual illustration of synthetic asphalt, glare, and Mars-like video inputs feeding a robotic perception controller"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Robotics perception study</p>
+              <h3>World models for robotic perception</h3>
+              <p>
+                A perception-testing pipeline connecting
+                <a
+                  class="inline-link"
+                  href="https://huggingface.co/nvidia/Cosmos-Predict2.5-2B"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >NVIDIA Cosmos</a
+                >
+                video generation on HPC GPUs with a Webots robot controller.
+                Uses asphalt, glare, and Mars-like scenarios to probe visual
+                robustness, with steering-error analysis, odometry-based
+                trajectory reconstruction, and synchronized comparisons.
+              </p>
+              <p>
+                Course project for
+                <a
+                  class="inline-link"
+                  href="https://tao.aisec.world/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Prof. Guanhong Tao</a
+                >
+                at the University of Utah.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Python</li>
+                <li>Cosmos Predict 2.5</li>
+                <li>Webots</li>
+                <li>OpenCV</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/robotic-perception-wfm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code &amp; experiments</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-category="systems" id="agent-msg">
+            <button
+              class="image-trigger project-image concept-frame"
+              data-caption="Concept artwork: agent-msg."
+            >
+              <img
+                class="concept-art"
+                src="assets/images/portfolio/agent-msg.webp"
+                alt="Enlarge a conceptual illustration of two local coding sessions exchanging messages and recording events in a shared journal"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Developer tooling</p>
+              <h3>agent-msg</h3>
+              <p>
+                A local messaging tool for Claude Code and Codex sessions. It
+                discovers running sessions, routes messages through their native
+                transports, and records delivery events and correlated replies
+                in a SQLite journal.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Python</li>
+                <li>SQLite</li>
+                <li>CLI</li>
+                <li>IPC</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/agent-msg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code &amp; documentation</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-category="vision" id="opengaze">
+            <button
+              class="image-trigger project-image photo-frame"
+              data-caption="OpenGaze"
+              style="
+                --photo: url(&quot;/assets/images/portfolio/OpenGaze-API-Response-Group.webp&quot;);
+              "
+            >
+              <img
+                alt="Enlarge the OpenGaze facial analysis and API response example"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/OpenGaze-API-Response-Group.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Computer vision service</p>
+              <h3>OpenGaze</h3>
+              <p>
+                An HTTP interface to
+                <a
+                  class="inline-link"
+                  href="https://github.com/TadasBaltrusaitis/OpenFace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >OpenFace</a
+                >’s facial-behavior analysis tools. It wraps the C++
+                command-line executable and returns eye-gaze and head-pose
+                measurements through a single API endpoint.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Python</li>
+                <li>FastAPI</li>
+                <li>OpenFace</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/OpenGaze"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="research systems"
+            id="pulsebridge"
+          >
+            <div
+              aria-label="Conceptual publication path: controller on core zero, a 64-byte state record, and monitor on core one."
+              class="project-diagram pulse-diagram"
+              role="img"
+            >
+              <span class="diagram-kicker">Controller → monitor</span>
+              <div class="diagram-flow">
+                <span class="diagram-node">Core 0<small>controller</small></span
+                ><span aria-hidden="true" class="diagram-wire"></span
+                ><span class="record"
+                  ><span></span><span></span><span></span><span></span></span
+                ><span aria-hidden="true" class="diagram-wire"></span
+                ><span class="diagram-node">Core 1<small>monitor</small></span>
+              </div>
+              <span class="diagram-footer">64-byte record </span>
+            </div>
+            <div class="project-info">
+              <p class="eyebrow">Computer architecture study</p>
+              <h3>PulseBridge</h3>
+              <p>
+                How can a controller share a consistent state snapshot with a
+                monitor on another core? This study compares five publication
+                designs, including seqlocks, double buffering, and DMA mirrors,
+                under interference.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>C11</li>
+                <li>gem5</li>
+                <li>ARM</li>
+                <li>Python</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/pulsebridge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code &amp; experiments</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="research systems"
+            id="disaster-tracking"
+          >
+            <button
+              class="image-trigger project-image"
+              data-caption="Concept artwork: Disaster Victim Tracking System."
+            >
+              <img
+                alt="Enlarge a conceptual illustration of tracking beacons and radio links across a damaged urban block"
+                class="concept-art sage-art"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/disaster-tracking.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Undergraduate thesis · 2020</p>
+              <h3>Disaster Victim Tracking System</h3>
+              <p>
+                A disaster victim tracking and rescue-support system developed
+                for my undergraduate thesis. It combines ESP32-based devices
+                with LoRaWAN, Bluetooth Low Energy, and GSM communication,
+                exploring how multiple wireless links can support location
+                reporting during emergencies.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>ESP32</li>
+                <li>LoRaWAN</li>
+                <li>BLE</li>
+                <li>GSM</li>
+              </ul>
+              <p class="project-note">Concept artwork</p>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="systems vision"
+            id="depen"
+          >
+            <button
+              class="image-trigger project-image photo-frame"
+              data-caption="AI-assisted presentation based on the original prototype photograph"
+              data-original="assets/images/portfolio/DePen.jpg"
+              style="
+                --photo: url(&quot;/assets/images/portfolio/depen-banner.webp&quot;);
+              "
+            >
+              <img
+                alt="Enlarge an edited view of the DePen optical text scanner resting on an open book"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/depen-banner.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Embedded systems</p>
+              <h3>DePen</h3>
+              <p>
+                A portable optical text scanner built with a Raspberry Pi Zero.
+                It uses a camera, OpenCV, and Tesseract to recognize text on
+                printed pages and look up word definitions.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Raspberry Pi</li>
+                <li>OpenCV</li>
+                <li>Tesseract</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/DePen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-category="systems" id="talk-e">
+            <button
+              class="image-trigger project-image photo-frame"
+              data-caption="AI-assisted presentation based on the original prototype photograph"
+              data-original="assets/images/portfolio/talkie.jpg"
+              style="
+                --photo: url(&quot;/assets/images/portfolio/talk-e-banner.webp&quot;);
+              "
+            >
+              <img
+                alt="Enlarge an edited view of the TALK-E radio prototype on a workbench"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/talk-e-banner.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Wireless communication</p>
+              <h3>TALK-E</h3>
+              <p>
+                An Arduino walkie-talkie using the nRF24L01+ 2.4 GHz radio. The
+                project combines audio capture, radio transmission, and custom
+                pre-amplification in a multi-channel communication device.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>Arduino</li>
+                <li>nRF24L01+</li>
+                <li>RF</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/TALK-E"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+          <article
+            class="project-card"
+            data-category="systems"
+            id="voice-remote"
+          >
+            <button
+              class="image-trigger project-image photo-frame"
+              data-caption="Concept artwork: Voice Remote transmitter and receiver, based on the original prototypes."
+              data-originals='[{"src":"assets/images/portfolio/voice-remote-tx-original.jpg","label":"transmitter"},{"src":"assets/images/portfolio/voice-remote-rx-original.jpg","label":"receiver"}]'
+              style="
+                --photo: url(&quot;/assets/images/portfolio/voice-remote.webp&quot;);
+              "
+            >
+              <img
+                alt="Enlarge a concept presentation of the Voice Remote keypad and microphone transmitter alongside its radio receiver"
+                decoding="async"
+                height="800"
+                loading="lazy"
+                src="assets/images/portfolio/voice-remote.webp"
+                width="1200"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Embedded hardware &amp; firmware · 2020</p>
+              <h3>Voice Remote</h3>
+              <p>
+                A wireless remote-control prototype for Android TV, combining
+                keypad input and push-to-talk audio over a 2.4 GHz radio link.
+                Includes transmitter and receiver firmware, microphone
+                amplification circuitry, and a documented protocol for carrying
+                button events and voice data.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>C++</li>
+                <li>Arduino</li>
+                <li>nRF24L01+</li>
+                <li>PlatformIO</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/VoiceRemoteTx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Transmitter</a
+                >
+                <a
+                  href="https://github.com/nsssayom/VoiceRemoteRx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Receiver</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-category="vision" id="theia">
+            <button
+              class="image-trigger project-image"
+              data-caption="Concept artwork: Theia OMR Scanner."
+            >
+              <img
+                alt="Enlarge a conceptual view of Theia detecting filled answer bubbles and extracting responses from a scanned sheet"
+                class="concept-art"
+                decoding="async"
+                height="600"
+                loading="lazy"
+                src="assets/images/portfolio/theia-omr.webp"
+                width="900"
+              />
+            </button>
+            <div class="project-info">
+              <p class="eyebrow">Computer vision application</p>
+              <h3>Theia OMR Scanner</h3>
+              <p>
+                A desktop application for reading scanned multiple-choice answer
+                sheets. Its Visual Basic interface uses an OpenCV
+                image-processing core to analyze marked responses on predefined
+                and customizable bubble sheets.
+              </p>
+              <ul aria-label="Technologies" class="tech-stack">
+                <li>VB.NET</li>
+                <li>C++</li>
+                <li>OpenCV</li>
+              </ul>
+              <div class="project-links">
+                <a
+                  href="https://github.com/nsssayom/Theia_OMR_Scanner"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section aria-labelledby="path-heading" class="panel" id="timeline">
+        <div class="section-heading">
+          <div>
+            <h2 id="path-heading">Experience &amp; education</h2>
+          </div>
+          <a
+            class="text-link"
+            href="assets/files/sayom_resume_oct_2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Résumé</a
+          >
+        </div>
+        <div class="timeline">
+          <article class="timeline-item current">
+            <p class="timeline-period">Aug 2024 – present</p>
+            <div>
+              <h3>PhD in Computer Science</h3>
+              <p class="timeline-org">
+                <a
+                  class="inline-link"
+                  href="https://www.utah.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >University of Utah</a
+                >
+                ·
+                <a
+                  class="inline-link"
+                  href="https://iotrustlab.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >IOTrust Lab</a
+                >
+              </p>
+              <p>
+                Doctoral research on cyber-physical systems safety and security,
+                developing property-guided falsification and verification
+                methods for robotic and autonomous systems.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-period">Jan 2023 – Jul 2024</p>
+            <div>
+              <h3>Linux Developer</h3>
+              <p class="timeline-org">
+                <a
+                  class="inline-link"
+                  href="https://www.meldcx.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >meldCX</a
+                >
+                · Dhaka (Remote)
+              </p>
+              <p>
+                Developed and maintained a custom embedded Linux OS for
+                enterprise ARM platforms, including
+                <a
+                  class="inline-link"
+                  href="https://www.yoctoproject.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Yocto</a
+                >-based builds, security hardening, and reliable OTA updates for
+                large-scale deployments. Developed multithreaded C/C++ and
+                Python services that made peripherals accessible across host
+                operating systems. Worked with QA and hardware vendors on driver
+                development, benchmarking, and system stability.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-period">Jan – Dec 2022</p>
+            <div>
+              <h3>Lecturer</h3>
+              <p class="timeline-org">
+                <a
+                  class="inline-link"
+                  href="https://daffodilvarsity.edu.bd/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Daffodil International University</a
+                >
+              </p>
+              <p>
+                Taught Operating Systems, Embedded Systems, and Computer
+                Fundamentals. Co-authored conference papers in deep learning and
+                secured research funding.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-period">Apr – Dec 2021</p>
+            <div>
+              <h3>Senior Software Engineer</h3>
+              <p class="timeline-org">HelloTask Platform Ltd.</p>
+              <p>
+                Led the design and development of a jobs platform for
+                blue-collar workers. Built an IVR broadcasting system to reach
+                users without internet access.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-period">Jun 2020 – Mar 2021</p>
+            <div>
+              <h3>Embedded Systems Engineer</h3>
+              <p class="timeline-org">HelloTask Platform Ltd.</p>
+              <p>
+                Prototyped a self-checkout store network and a centralized
+                advertising delivery platform, combining IoT devices with
+                computer-vision analytics.
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <p class="timeline-period">2017 – 2020</p>
+            <div>
+              <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+              <p class="timeline-org">
+                <a
+                  class="inline-link"
+                  href="https://www.aiub.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >American International University-Bangladesh</a
+                >
+              </p>
+              <p>
+                Graduated Summa Cum Laude with CGPA 3.96/4.00. Completed a
+                thesis on disaster victim tracking and rescue-support systems.
+              </p>
+            </div>
+          </article>
+        </div>
+        <section aria-labelledby="honors-heading" class="honors" id="honors">
+          <h3 id="honors-heading">Honors &amp; awards</h3>
+          <ul class="honors-list">
+            <li>
+              <h4>Honorable Mention</h4>
+              <p>
+                <a
+                  class="inline-link"
+                  href="https://rai.utah.edu/minds-machines-hackathon-recap/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Minds and Machines: AI in Education Hackathon</a
+                >
+                · 2026
+              </p>
+              <p>Team Mithril · Assign · University of Utah</p>
+            </li>
+            <li>
+              <h4>Summa Cum Laude</h4>
+              <p>
+                <a
+                  class="inline-link"
+                  href="https://www.aiub.edu/Files/Uploads/20th-convocation-awardees-for-web-2019-20.pdf#page=6"
+                  title="AIUB 20th Convocation awardees (PDF, page 6)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AIUB 20th Convocation awardees</a
+                >
+              </p>
+              <p>B.Sc. in Computer Science &amp; Engineering · 2020</p>
+            </li>
+            <li>
+              <h4>Dean’s List</h4>
+              <p>American International University-Bangladesh</p>
+              <p>Three-time recipient</p>
+            </li>
+            <li>
+              <h4>Champion, Mobile App Showcasing</h4>
+              <p>
+                <a
+                  class="inline-link"
+                  href="https://www.aiub.edu/aiub-celebrated-aiub-cs-fest-2017"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AIUB CS Fest 2017</a
+                >
+              </p>
+              <p>Team Bangla Platoon</p>
+            </li>
+            <li>
+              <h4>First Place, Physics Quiz</h4>
+              <p>
+                <a
+                  class="inline-link"
+                  href="https://www.aiub.edu/department-of-physics-of-aiub-has-organized-physics-quiz-contest-on-the-special-occasion-of-the-month-of-victory-of-bangladesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AIUB Physics Quiz Contest 2017</a
+                >
+              </p>
+            </li>
+          </ul>
         </section>
-
-        <!-- Research Work Panel -->
-        <section class="panel" id="work">
-            <div class="panel-header">
-                <h1>Research Focus</h1>
-                <div class="research-stats">
-                    <div class="stat">
-                        <span class="stat-value">3</span>
-                        <span class="stat-label">Active Projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value">2024</span>
-                        <span class="stat-label">PhD Started</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="research-workspace">
-                <div class="research-domains">
-                    <div class="domain-card active" data-domain="falsification">
-                        <div class="domain-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Falsification</h3>
-                        <p>CPS Control Stacks</p>
-                    </div>
-                    <div class="domain-card" data-domain="verification">
-                        <div class="domain-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Verification</h3>
-                        <p>Multi-Robot Safety</p>
-                    </div>
-                    <div class="domain-card" data-domain="reverse">
-                        <div class="domain-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
-                        <h3>Reverse Engineering</h3>
-                        <p>Binary analysis for CPS</p>
-                    </div>
-                </div>
-
-                <div class="domain-details">
-                    <div class="domain-content active" id="falsification">
-                        <h2>Property-Guided Falsification for CPS Control Stacks</h2>
-                        <div class="methodology">
-                            <h4>Approach</h4>
-                            <p>Developing property-scoped reductions of control logic and physical dynamics to
-                                accelerate violation discovery in cyber-physical systems. The research focuses on
-                                creating efficient methods that can validate counterexamples on industry-standard
-                                platforms.</p>
-
-                            <h4>Platforms</h4>
-                            <div class="platform-grid">
-                                <div class="platform">PX4 Autopilot</div>
-                                <div class="platform">ArduPilot</div>
-                                <div class="platform">SITL Simulation</div>
-                                <div class="platform">Hardware-in-the-Loop</div>
-                            </div>
-
-                            <h4>Impact</h4>
-                            <p>This work aims to bridge the gap between theoretical verification methods and practical
-                                autonomous system validation, enabling faster detection of safety-critical
-                                vulnerabilities.</p>
-                        </div>
-                    </div>
-
-                    <div class="domain-content" id="verification">
-                        <h2>Safety Policy Verification in Multi-Robot Systems</h2>
-                        <div class="methodology">
-                            <h4>Challenge</h4>
-                            <p>Formalizing safety policies for multi-stakeholder robot systems where different entities
-                                have varying roles, permissions, and constraints that must be verified at runtime.</p>
-
-                            <h4>Methods</h4>
-                            <div class="method-list">
-                                <div class="method">Policy Conflict Analysis</div>
-                                <div class="method">Runtime Monitoring</div>
-                                <div class="method">Distributed Consensus</div>
-                                <div class="method">Formal Specification</div>
-                            </div>
-
-                            <h4>Applications</h4>
-                            <p>The research enables safe coordination in scenarios like autonomous vehicle fleets, drone
-                                swarms, and industrial robot networks with multiple operators.</p>
-                        </div>
-                    </div>
-
-                    <div class="domain-content" id="reverse">
-                        <h2>Reverse Engineering</h2>
-                        <div class="methodology">
-                            <h4>Focus</h4>
-                            <p>Vulnerability discovery through binary analysis and reverse engineering, aided by
-                                cyber-physical surrogate modeling to guide input generation and state exploration for
-                                CPS targets.</p>
-
-                            <h4>Techniques</h4>
-                            <div class="focus-grid">
-                                <div class="focus">Static Analysis</div>
-                                <div class="focus">Dynamic Instrumentation</div>
-                                <div class="focus">Symbolic Execution</div>
-                                <div class="focus">Firmware Emulation</div>
-                                <div class="focus">Protocol Analysis</div>
-                            </div>
-
-                            <h4>Tooling</h4>
-                            <div class="method-list">
-                                <div class="method">Ghidra</div>
-                                <div class="method">QEMU / Unicorn for emulation</div>
-                                <!-- <div class="method">Frida / DynamoRIO for runtime hooks</div> -->
-                                <div class="method">AFL++/LibFuzzer with model-guided inputs</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <section class="publications-section" aria-labelledby="publications-heading">
-                <div class="section-heading">
-                    <h2 id="publications-heading">Selected Publications</h2>
-                </div>
-
-                <div class="publication-list">
-                    <article class="publication-entry">
-                        <div class="publication-main">
-                            <h3>
-                                <a href="https://arxiv.org/abs/2512.02270" target="_blank"
-                                    rel="noopener noreferrer">Property-Guided Cyber-Physical Reduction and
-                                    Surrogation for Safety Analysis in Robotic Vehicles</a>
-                            </h3>
-
-                            <p class="publication-citation">
-                                <a href="https://sayom.me/" target="_blank" rel="noopener noreferrer">Nazmus
-                                    Shakib Sayom</a> and
-                                <a href="https://lagarcia.us/" target="_blank"
-                                    rel="noopener noreferrer">Luis A. Garcia</a>. In
-                                <a href="https://smartsp.eai-conferences.org/2025/" target="_blank"
-                                    rel="noopener noreferrer">Proceedings of the 3rd EAI International Conference on Security and
-                                    Privacy in Cyber-Physical Systems and Smart Vehicles (EAI SmartSP 2025)</a>,
-                                Salt Lake City, UT, USA, December 2025. <a
-                                    href="https://link.springer.com/series/8197" target="_blank"
-                                    rel="noopener noreferrer">Springer LNICST</a>.
-                            </p>
-
-                            <p class="publication-summary">Property-guided co-reduction isolates only the controller
-                                logic and physical dynamics needed for a safety property, then fuzzes the resulting
-                                surrogate to find robotic-vehicle violations without full-system simulation.</p>
-
-                            <p class="publication-links">
-                                <a href="https://arxiv.org/abs/2512.02270" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-file-lines"></i>
-                                    <span>arXiv</span>
-                                </a>
-                                <a href="https://arxiv.org/pdf/2512.02270" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-file-pdf"></i>
-                                    <span>PDF</span>
-                                </a>
-                                <a href="https://smartsp.eai-conferences.org/2025/accepted-papers/" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fas fa-building-columns"></i>
-                                    <span>Conference</span>
-                                </a>
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </section>
-
-        <!-- Career Timeline Panel -->
-        <section class="panel" id="timeline">
-            <div class="panel-header">
-                <h1>Career Timeline</h1>
-            </div>
-
-            <div class="timeline-container">
-                <div class="timeline-item" data-category="education" data-year="2024">
-                    <div class="timeline-marker current"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Aug 2024 – Present</div>
-                        <h3>PhD in Computer Science</h3>
-                        <div class="timeline-org">University of Utah</div>
-                        <p>Conducting doctoral research on cyber-physical systems security, developing falsification
-                            techniques and safety verification methods for autonomous systems.</p>
-                        <div class="timeline-tags">
-                            <span>Research</span>
-                            <span>CPS Security</span>
-                            <span>Formal Methods</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="industry" data-year="2023">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Jan 2023 – Jul 2024</div>
-                        <!-- <h3>Linux Developer</h3>
-                        <div class="timeline-org">meldCX, Dhaka</div>
-                        <p>Developed application-specific embedded Linux distributions for ARM platforms. Implemented secure, network-accessible abstractions for device drivers.</p>
-                        <div class="timeline-tags">
-                            <span>Linux</span>
-                            <span>ARM</span>
-                            <span>Embedded</span>
-                            <span>Security</span>
-                        </div> -->
-                        <h3>Linux Developer</h3>
-                        <div class="timeline-org">meldCX, Dhaka (Remote)</div>
-                        <div class="timeline-content-list">
-                            <ul>
-                                <li>Built embedded Linux distributions for ARM platforms using Yocto, with OTA update
-                                    and
-                                    security hardening for fintech-grade reliability.</li>
-                                <li>Developed multi-threaded Linux services in C/C++ and Python to securely expose
-                                    device
-                                    driver functions over the network, simplifying integration for applications.</li>
-                                <li>Worked with QA and hardware vendors on driver development, benchmarking, and system
-                                    stability improvements.</li>
-                            </ul>
-                        </div>
-                        <div class="timeline-tags">
-                            <span>Embedded Linux</span>
-                            <span>Yocto</span>
-                            <span>C/C++</span>
-                            <span>Python</span>
-                            <span>Kernel Development</span>
-                            <span>ARM</span>
-                            <span>Docker</span>
-                            <span>Security Hardening</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="academia" data-year="2022">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Jan 2022 – Dec 2022</div>
-                        <h3>Lecturer</h3>
-                        <div class="timeline-org">Daffodil International University</div>
-                        <p>Taught Operating Systems, Embedded Systems, and Computer Fundamentals. Co-authored conference
-                            papers in deep learning and secured research funding.</p>
-                        <div class="timeline-tags">
-                            <span>Teaching</span>
-                            <span>Research</span>
-                            <span>Deep Learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="industry" data-year="2021">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Apr 2021 – Dec 2021</div>
-                        <h3>Senior Software Engineer</h3>
-                        <div class="timeline-org">HelloTask Platform Ltd.</div>
-                        <p>Led design and development of jobs platform for blue-collar workers. Built IVR broadcasting
-                            system for users without internet access.</p>
-                        <div class="timeline-tags">
-                            <span>Leadership</span>
-                            <span>Platform Development</span>
-                            <span>Accessibility</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="industry" data-year="2020">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">Jun 2020 – Mar 2021</div>
-                        <h3>Embedded Systems Engineer</h3>
-                        <div class="timeline-org">HelloTask Platform Ltd.</div>
-                        <p>Prototyped self-checkout store network and centralized advertising delivery platform using
-                            IoT and computer vision analytics.</p>
-                        <div class="timeline-tags">
-                            <span>IoT</span>
-                            <span>Computer Vision</span>
-                            <span>Prototyping</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="education" data-year="2020">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-period">2017 – 2020</div>
-                        <h3>B.Sc. Computer Science & Engineering</h3>
-                        <div class="timeline-org">American International University-Bangladesh</div>
-                        <p>Graduated Summa Cum Laude with CGPA 3.96/4.00. Completed thesis on disaster victim tracking
-                            and rescue support systems.</p>
-                        <div class="timeline-tags">
-                            <span>Summa Cum Laude</span>
-                            <span>Emergency Systems</span>
-                            <span>IoT</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Panel -->
-        <section class="panel" id="portfolio">
-            <div class="panel-header">
-                <h1>Projects</h1>
-                <div class="portfolio-filters">
-                    <button class="portfolio-filter active" data-filter="all">All Projects</button>
-                    <button class="portfolio-filter" data-filter="research">Research</button>
-                    <button class="portfolio-filter" data-filter="systems">Systems</button>
-                    <button class="portfolio-filter" data-filter="vision">Computer Vision</button>
-                </div>
-            </div>
-
-            <div class="portfolio-grid">
-                <div class="project-card featured" data-category="research systems">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <picture>
-                                <source srcset="assets/images/research/surfCPS/fligh-tragectory-full-simulation.webp"
-                                    type="image/webp">
-                                <img src="assets/images/research/surfCPS/fligh-tragectory-full-simulation.png"
-                                    alt="Buggy Drone flight trajectory simulation" class="project-thumbnail"
-                                    loading="lazy" decoding="async" />
-                            </picture>
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">CPS Security Research</div>
-                        <h3>Buggy Drone <a href="https://github.com/iotrustlab/buggy_drone" target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
-                        <p>Research testbed for reproducing a low-battery parachute deployment flaw using a PyBullet
-                            drone simulation, SCRBE surrogate execution, and STL-guided fuzzing.</p>
-                        <div class="tech-stack">
-                            <span>Research</span>
-                            <span>PyBullet</span>
-                            <span>SCRBE</span>
-                            <span>Fuzzing</span>
-                            <span>STL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card featured" data-category="systems">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <picture>
-                                <source srcset="assets/images/portfolio/obadh-card.webp" type="image/webp">
-                                <img src="assets/images/portfolio/obadh-card.jpg"
-                                    alt="Obadh Bangla transliteration keyboard: the app mark and tagline beside the native iOS keyboard"
-                                    class="project-thumbnail" loading="lazy" decoding="async" />
-                            </picture>
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Open Source · Developer &amp; Maintainer</div>
-                        <h3>Obadh <a href="https://github.com/nsssayom/obadh_engine" target="_blank"
-                                rel="noopener noreferrer" class="project-github-link"><i class="fab fa-github"></i></a>
-                        </h3>
-                        <p>A deterministic Roman-to-Bangla transliteration engine, a modern successor to Avro
-                            Phonetic, with autocorrect and next-word autosuggest layered above the rule-based core.
-                            The Rust engine powers native keyboards, starting with iOS.</p>
-                        <p class="project-links">
-                            <a href="https://github.com/nsssayom/obadh_engine" target="_blank"
-                                rel="noopener noreferrer">Engine</a>
-                            <a href="https://github.com/nsssayom/obadh-ios" target="_blank"
-                                rel="noopener noreferrer">iOS keyboard</a>
-                            <a href="https://sayom.me/obadh_engine/" target="_blank"
-                                rel="noopener noreferrer">Playground</a>
-                        </p>
-                        <div class="tech-stack">
-                            <span>Rust</span>
-                            <span>WASM</span>
-                            <span>Swift</span>
-                            <span>FST</span>
-                            <span>n-gram</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card featured" data-category="research vision">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <picture>
-                                <source srcset="assets/images/portfolio/OpenGaze-API-Response-Group.webp"
-                                    type="image/webp">
-                                <img src="assets/images/portfolio/OpenGaze-API-Response-Group.png"
-                                    alt="OpenGaze facial-behavior analysis API response" class="project-thumbnail"
-                                    loading="lazy" decoding="async" />
-                            </picture>
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Computer Vision API</div>
-                        <h3>OpenGaze <a href="https://github.com/nsssayom/OpenGaze" target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
-                        <p>RESTful web API service for OpenFace facial behavior analysis, providing eye-gaze and
-                            head-pose data for research applications.</p>
-                        <div class="tech-stack">
-                            <span>FastAPI</span>
-                            <span>OpenCV</span>
-                            <span>Computer Vision</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="systems vision">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <img src="assets/images/portfolio/DePen.jpg" alt="DePen optical text scanner" class="project-thumbnail"
-                                loading="lazy" />
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">Embedded Systems</div>
-                        <h3>DePen <a href="https://github.com/nsssayom/DePen" target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
-                        <p>Raspberry Pi Zero powered optical text scanner using computer vision for OCR operations and
-                            word definition lookup.</p>
-                        <div class="tech-stack">
-                            <span>Raspberry Pi</span>
-                            <span>OpenCV</span>
-                            <span>Tesseract</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="systems">
-                    <div class="project-image">
-                        <div class="project-figure">
-                            <img src="assets/images/portfolio/talkie.jpg" alt="TALK-E Project" class="project-thumbnail"
-                                loading="lazy" />
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-category">RF Communication</div>
-                        <h3>TALK-E <a href="https://github.com/nsssayom/TALK-E" target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-github-link"><i class="fab fa-github"></i></a></h3>
-                        <p>Long-range multi-channel walkie-talkie system with custom pre-amplification for emergency
-                            communication scenarios.</p>
-                        <div class="tech-stack">
-                            <span>Arduino</span>
-                            <span>nRF24L01</span>
-                            <span>RF</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="research">
-                    <div class="project-image project-image-clean">
-                        <div class="project-figure"
-                            data-caption="An AI depiction of the system in use, generated with Google's Nano Banana 2.">
-                            <img src="assets/images/portfolio/disaster.jpeg" alt="Disaster victim tracking system"
-                                class="project-thumbnail project-thumbnail-contain" loading="lazy"
-                                decoding="async" />
-                            <div class="expand-hint">
-                                <i class="fas fa-expand"></i>
-                                <span>Click to enlarge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info special">
-                        <div class="project-category">Undergraduate Thesis</div>
-                        <h3>Disaster Victim Tracking System</h3>
-                        <p>Comprehensive emergency response system utilizing multi-layer communications including ESP32,
-                            LoRaWAN, BLE, and GSM for resilient search-and-rescue operations.</p>
-                        <div class="tech-stack">
-                            <span>IoT</span>
-                            <span>LoRaWAN</span>
-                            <span>Emergency Systems</span>
-                            <span>Multi-layer Communication</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Connect Panel -->
-        <section class="panel" id="connect">
-            <div class="panel-header">
-                <h1>Let's Connect</h1>
-                <div class="availability-status">
-                    <span class="status-dot available"></span>
-                    <span>Available for research collaborations</span>
-                </div>
-            </div>
-
-            <div class="connect-workspace">
-                <div class="contact-grid">
-                    <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>Email</h3>
-                            <a href="mailto:sayom.shakib@utah.edu">sayom.shakib@utah.edu</a>
-                            <p>Research discussions and collaborations</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/nsssayom" target="_blank"
-                                rel="noopener noreferrer">github.com/nsssayom</a>
-                            <p>Open source projects and contributions</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>Google Scholar</h3>
-                            <a href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en" target="_blank"
-                                rel="noopener noreferrer">View Publications</a>
-                            <p>Publications and citations</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/nsssayom/" target="_blank"
-                                rel="noopener noreferrer">linkedin.com/in/nsssayom</a>
-                            <p>Professional network and career updates</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <div class="method-info">
-                            <h3>Research Lab</h3>
-                            <a href="https://iotrustlab.com/people/nsssayom/" target="_blank"
-                                rel="noopener noreferrer me">IOTrust Lab · University of Utah</a>
-                            <p>Advisor, group, and current research profile</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="collaboration-message">
-                    <h2>Open to Collaboration</h2>
-                    <p>Open to collaboration on <strong>CPS Security and Safety</strong>, <strong>Reverse
-                            Engineering</strong> and related works. Also open for <strong>internship
-                            opportunities</strong>. Feel free to reach out!</p>
-                </div>
-            </div>
-        </section>
+      </section>
+      <section
+        aria-labelledby="contact-heading"
+        class="panel connect"
+        id="connect"
+      >
+        <div>
+          <h2 id="contact-heading">Contact</h2>
+          <p>
+            I’m interested in research collaborations and PhD internships in
+            systems, security, and robotics. If there’s a problem you think I
+            could help with, I’d like to hear about it.
+          </p>
+          <a
+            class="email-link"
+            href="#connect"
+            data-email
+            data-email-address
+            hidden
+            >Email me</a
+          >
+        </div>
+        <div class="contact-links">
+          <a
+            href="https://github.com/nsssayom"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span aria-hidden="true"></span></a
+          ><a
+            href="https://scholar.google.com/citations?user=RLNbdK4AAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google Scholar <span aria-hidden="true"></span></a
+          ><a
+            href="https://www.linkedin.com/in/nsssayom/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn <span aria-hidden="true"></span></a
+          ><a
+            href="https://iotrustlab.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >IOTrust Lab <span aria-hidden="true"></span
+          ></a>
+        </div>
+      </section>
     </main>
-
-    <!-- Image Modal -->
-    <div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Enlarged image"
-        aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close image">
-                <i class="fas fa-times"></i>
-            </button>
-            <img class="modal-image" id="modal-image" alt="" />
-            <div class="modal-caption" id="modal-caption"></div>
-        </div>
-    </div>
-
-    <!-- Background elements removed for clean full-window design -->
-
-    <!-- JavaScript -->
-    <script src="assets/js/main.js"></script>
-</body>
-
+    <footer class="site-footer">
+      <span>Nazmus Shakib Sayom</span><span>Salt Lake City, Utah</span
+      ><a href="#intro">Back to top ↑</a>
+    </footer>
+    <dialog
+      aria-describedby="modal-caption"
+      aria-label="Enlarged project image"
+      class="image-modal"
+      id="image-modal"
+    >
+      <button aria-label="Close image" class="modal-close">
+        Close <span aria-hidden="true">×</span>
+      </button>
+      <img alt="" id="modal-image" />
+      <p id="modal-caption"></p>
+    </dialog>
+    <script defer="" src="assets/js/main.js"></script>
+  </body>
 </html>

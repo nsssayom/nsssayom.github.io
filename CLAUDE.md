@@ -1,38 +1,56 @@
-# CLAUDE.md
+# Repository notes
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Personal portfolio for Nazmus Shakib Sayom, hosted on GitHub Pages at `sayom.me`.
+Pushing `main` deploys the site. Do not commit or publish before the user has
+reviewed the requested change brief.
 
-## What this is
+This is plain HTML, CSS, and JavaScript, with no build step or runtime package
+dependencies. See README.md for static and hot-reloading preview commands.
 
-Personal academic/portfolio website for Nazmus Shakib Sayom, served by **GitHub Pages** from the repo root at the custom domain `sayom.me` (see `CNAME`). Any push to `main` deploys the live site.
+## Structure
 
-**It is a plain static site: vanilla HTML/CSS/JS with no build step, no framework, no bundler, no dependencies.** The `README.md` claim of "React, Tailwind CSS, and Vite" and its `npm run dev/build/preview` commands are inaccurate: there is no `package.json`, `src/`, or `node_modules/`. Edit the source files directly; the files in the repo *are* what ships.
+- `index.html`: five sections in order: `intro`, `work`, `portfolio`, `timeline`,
+  `connect`. Navigation uses native fragment links. Keep stable section IDs.
+- `assets/css/style.css`: CSS custom properties for colors; dark default,
+  light theme selected through `data-theme` on the root element.
+- `assets/js/main.js`: `PortfolioInterface` progressively enhances theme controls,
+  scroll navigation state, project filtering, the terminal name animation, and
+  the native image dialog.
 
-## Developing
+An early script sets the theme before paint. Default to dark regardless of the
+system theme; light mode is an explicit toggle choice, remembered across visits.
+Both theme paths tolerate blocked
+localStorage. Filters hide non-matching cards with `hidden`; the controls are
+hidden until JavaScript initializes. Do not hide ordinary content behind JS.
 
-There is no compile/build/test step. Open `index.html` directly, or serve the root over static HTTP to preview:
+## Content and assets
 
-```bash
-python3 -m http.server 5501    # then open http://localhost:5501
-```
+Use only public, verified project information. Local private repositories and
+unpublished research can provide context but must not be copied into this site.
+Keep development status accurate and show all selected projects in the main gallery.
 
-The `.vscode/settings.json` also configures the VS Code **Live Server** extension on port 5501, which is the author's normal workflow.
+Label the research, Buggy Drone, disaster-tracking, and Theia banners as concept
+artwork in the viewer. Do not describe them as actual deployments or measured
+results. DePen and TALK-E retain their AI-assisted captions and original-photo links.
 
-To validate changes, load the page in a browser and exercise: theme toggle, panel navigation (dock + keyboard), mobile FAB menu, portfolio/timeline filters, and image modals.
+SEO metadata, social preview, JSON-LD, canonical URL, and sitemap should remain
+consistent. The site retains Google Analytics. Fonts come from Google Fonts;
+there is no icon-font dependency. The older local Font Awesome files are unused.
 
-## Architecture
+Résumé PDFs are versioned under `assets/files`; the visible link is simply
+“Résumé.” Do not silently substitute a private résumé.
 
-Three source files hold everything:
+## Validation
 
-- **`index.html`** (~49 KB) holds the entire page. All content is authored inline as `<section class="panel">` blocks; there is no templating or data file. The five panels, in navigation order, are `intro`, `work`, `timeline`, `portfolio`, `connect` (this order is mirrored in `main.js`'s `panelOrder` array, so keep them in sync). The `<head>` is deliberately heavy with SEO/social metadata: schema.org JSON-LD, Open Graph + Twitter cards, and Google Analytics (`gtag`, id `G-Y843CB9BRK`).
-- **`assets/css/style.css`** (~44 KB) holds all styling. Theming is driven by **CSS custom properties**: dark is the default in `:root`, light overrides live in `[data-theme="light"]`. Reference colors/spacing/motion through these variables rather than hardcoding values.
-- **`assets/js/main.js`** (~14 KB) is a single `PortfolioInterface` class instantiated on load. Its `init()` wires up focused methods: `setupTheme`, `setupNavigation`/`setupScrollSpy`, `setupMobileNavigation`, `setupImageModal` (keyboard-accessible figures + dialog focus management), `setupInteractions` (name typewriter), `setupKeyboard` (number-key panel shortcuts), and `initPanels` (research-domain / timeline / portfolio filters). Active-nav state flows through one helper, `updateActiveNav()`, which also sets `aria-current`. No state persists server-side.
+Exercise desktop/mobile layouts and both themes, native anchor navigation,
+filters and image dialogs (keyboard opening,
+Escape, focus trapping, focus return). Check console errors, local asset paths,
+duplicate IDs, structured data, and outgoing links. The static page must remain
+readable and navigable if JavaScript or localStorage is unavailable.
 
-Theme handling: the active theme is the `data-theme` attribute on `<html>`, persisted to `localStorage` under `theme`. If the user has never toggled manually, it follows the OS `prefers-color-scheme` and reacts to system changes; a manual toggle sets `manualThemeOverride` and stops the OS from overriding it.
-
-## Conventions & gotchas
-
-- Adding or renaming a panel means updating three places: the `<section id="...">` and its dock/mobile-nav buttons in `index.html`, the `panelOrder` array in `main.js`, and any panel-specific CSS.
-- Fonts and icons load from CDNs (Google Fonts: JetBrains Mono + Space Grotesk; Font Awesome 6.4.0). A local Font Awesome **4.7.0** copy also exists under `assets/icons/`, so check which one a given icon uses before editing markup.
-- SEO surface is intentional and coupled: when content or URLs change, keep `sitemap.xml` (`lastmod`), the canonical/OG tags, and the JSON-LD in `index.html` consistent.
-- Résumé PDFs are versioned by filename in `assets/files/` (e.g. `sayom_resume_sept_2025.pdf`); links in `index.html` point at a specific file, so update the link when adding a newer one.
+Keep the name on a single line in monospace, with a typewriter reveal and blinking block cursor.
+The user explicitly requested these. Respect reduced motion by showing the full
+name and a steady cursor. Keep the theme toggle in the bottom navigation dock;
+on mobile, the dock becomes an icon-only hamburger menu. Do not add a separate
+masthead. Keep email addresses encoded in source; initialize native mailto links
+and show the decoded address in Contact so visitors can copy it.
