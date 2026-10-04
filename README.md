@@ -24,6 +24,10 @@ build step, or runtime package dependencies.
   Other contact links remain available without JavaScript.
 - `assets/images/social-preview-v2.png`: 1200 × 630 social card shared by Open Graph
   and Twitter metadata. The versioned URL avoids reusing the old preview asset.
+- `assets/images/thumbnails/`: prefiltered 400, 600, and 800-pixel artwork exports
+  for smooth linework on standard-density screens. Responsive `srcset`/`sizes`
+  select the appropriate file; the image viewer always opens the full original.
+  Regenerate with `bash scripts/build-artwork-thumbnails.sh` (ImageMagick).
 - `assets/images/portfolio/disaster-tracking.webp`: AI-generated concept
   illustration, not a deployment photograph or measured topology. Its caption
   identifies it as such.

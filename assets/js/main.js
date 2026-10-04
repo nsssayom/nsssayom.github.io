@@ -48,6 +48,12 @@ class PortfolioInterface {
       document.querySelector('meta[name="theme-color"]').content =
         theme === "dark" ? "#101010" : "#f8fafc";
       document.querySelectorAll("img[data-light-src]").forEach((image) => {
+        if (image.dataset.lightSrcset) {
+          image.srcset =
+            theme === "light"
+              ? image.dataset.lightSrcset
+              : image.dataset.darkSrcset;
+        }
         image.src =
           theme === "light" ? image.dataset.lightSrc : image.dataset.darkSrc;
       });
@@ -213,7 +219,12 @@ class PortfolioInterface {
       button.addEventListener("click", () => {
         const source = button.querySelector("img");
         trigger = button;
-        image.src = source.currentSrc || source.src;
+        const lightTheme = document.documentElement.dataset.theme === "light";
+        image.src =
+          (lightTheme && source.dataset.lightFullSrc) ||
+          source.dataset.fullSrc ||
+          source.currentSrc ||
+          source.src;
         image.classList.toggle(
           "sage-art",
           source.classList.contains("sage-art"),
